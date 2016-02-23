@@ -41,6 +41,20 @@ class Comment
      */
     private $media;
 
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="publishedAt", type="datetime")
+     */
+    private $publishedAt;
+
+    /**
+     * Comment constructor.
+     */
+    public function __construct()
+    {
+        $this->publishedAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -122,5 +136,25 @@ class Comment
     public function getMedia()
     {
         return $this->media;
+    }
+
+    /**
+     * Get publishedAt
+     *
+     * @return datetime
+     */
+    public function getPublishedAt()
+    {
+        return $this->publishedAt;
+    }
+
+    /**
+     * Set  publishedAt
+     *
+     * @param \DateTime $publishedAt
+     */
+    public function setPublishedAt(\DateTime $publishedAt)
+    {
+        $this->publishedAt = $publishedAt;
     }
 }
