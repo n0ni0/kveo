@@ -5,10 +5,17 @@ namespace AppBundle\DataFixtures\ORM;
 use AppBundle\Entity\Person;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class Persons extends AbstractFixture implements OrderedFixtureInterface
+class Persons extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
+
     public function getOrder()
     {
         return 60;
@@ -18,6 +25,7 @@ class Persons extends AbstractFixture implements OrderedFixtureInterface
     {
         $stallone = new Person();
         $stallone->setName('Silvester Stallone');
+        $stallone->setSlug($this->container->get('slugger')->slugify($stallone->getName()));
         $stallone->setAge(63);
         $stallone->setBirthplace('New York');
         $stallone->setBiography('Biografia');
@@ -25,6 +33,7 @@ class Persons extends AbstractFixture implements OrderedFixtureInterface
 
         $andrew = new Person();
         $andrew->setName('Andrew Lincoln');
+        $andrew->setSlug($this->container->get('slugger')->slugify($andrew->getName()));
         $andrew->setAge(42);
         $andrew->setBirthplace('London - England - UK');
         $andrew->setBiography('From Wikipedia, the free encyclopedia. Andrew Lincoln (born Andrew James Clutterbuck;
@@ -37,6 +46,7 @@ class Persons extends AbstractFixture implements OrderedFixtureInterface
 
         $emily = new Person();
         $emily->setName('Emily Kinney');
+        $emily->setSlug($this->container->get('slugger')->slugify($emily->getName()));
         $emily->setAge(30);
         $emily->setBirthplace('Nebraska - USA');
         $emily->setBiography('From Wikipedia, the free encyclopedia. Emily Kinney (born August 15, 1985 height
@@ -45,5 +55,10 @@ class Persons extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($emily);
 
         $manager->flush();
+    }
+
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
     }
 }

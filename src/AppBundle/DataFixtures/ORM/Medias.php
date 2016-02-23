@@ -6,9 +6,16 @@ use AppBundle\Entity\Media;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class Medias extends AbstractFixture implements OrderedFixtureInterface
+class Medias extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
+
     public function getOrder()
     {
         return 70;
@@ -25,6 +32,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface
         $JohnRambo->setMediaType($mediaType);
         $JohnRambo->setGender($gender);
         $JohnRambo->setTitle('John Rambo Vuelta al infierno');
+        $JohnRambo->setSlug($this->container->get('slugger')->slugify($JohnRambo->getTitle()));
         $JohnRambo->setYear(2008);
         $JohnRambo->setPlot(
                 'El ex boina verde John Rambo (Stallone) lleva una solitaria
@@ -43,6 +51,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface
         $theWalkingDead->setMediaType($mediaType);
         $theWalkingDead->setGender($gender);
         $theWalkingDead->setTitle('The Walking Dead');
+        $theWalkingDead->setSlug($this->container->get('slugger')->slugify($theWalkingDead->getTitle()));
         $theWalkingDead->setYear(2010);
         $theWalkingDead->setSeason(6);
         $theWalkingDead->setPlot(
@@ -63,6 +72,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface
         $fringe->setMediaType($mediaType);
         $fringe->setGender($gender);
         $fringe->setTitle('Fringe (Al límite)');
+        $fringe->setSlug($this->container->get('slugger')->slugify($fringe->getTitle()));
         $fringe->setYear(2008);
         $fringe->setSeason(5);
         $fringe->setPlot(
@@ -82,6 +92,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface
         $apellidosVascos->setMediaType($mediaType);
         $apellidosVascos->setGender($gender);
         $apellidosVascos->setTitle('8 Apellidos Vascos');
+        $apellidosVascos->setSlug($this->container->get('slugger')->slugify($apellidosVascos->getTitle()));
         $apellidosVascos->setYear(2014);
         $apellidosVascos->setPlot(
             'Rafa (Dani Rovira) es un joven señorito andaluz que no ha tenido que salir jamás de su Sevilla natal
@@ -97,5 +108,10 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($apellidosVascos);
 
         $manager->flush();
+    }
+
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
     }
 }
