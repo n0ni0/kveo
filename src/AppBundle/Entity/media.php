@@ -23,12 +23,12 @@ class Media
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\mediaType")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MediaType")
      */
     private $mediaType;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\gender")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Gender")
      */
     private $gender;
 
@@ -82,7 +82,7 @@ class Media
     private $trailer;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\comment", mappedBy="media")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="media")
      */
     private $comments;
 
@@ -286,30 +286,6 @@ class Media
     public function getGender()
     {
         return $this->gender;
-    }
-
-    /**
-     * Set mediaTrailer
-     *
-     * @param \AppBundle\Entity\mediaTrailer $mediaTrailer
-     *
-     * @return media
-     */
-    public function setMediaTrailer(\AppBundle\Entity\mediaTrailer $mediaTrailer = null)
-    {
-        $this->mediaTrailer = $mediaTrailer;
-
-        return $this;
-    }
-
-    /**
-     * Get mediaTrailer
-     *
-     * @return \AppBundle\Entity\mediaTrailer
-     */
-    public function getMediaTrailer()
-    {
-        return $this->mediaTrailer;
     }
 
     /**
