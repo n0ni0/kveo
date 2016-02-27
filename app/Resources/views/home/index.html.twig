@@ -1,5 +1,21 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} {% endblock %}
+
 {% block body %}
-    Welcome to the jungle!
+    {{ parent() }}
+        <div class="media-grid container-fluid">
+            {% for medias in media %}
+                <div class="media-container">
+                    <div class="media-card">
+                        <a href="#"><img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}"></a>
+                    </div>
+                    <div class="media-info">
+                        <div class="media-title">
+                            {{ medias.title }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 {% endblock %}
