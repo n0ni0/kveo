@@ -20,7 +20,7 @@
                     <div class="search-box col-md-3">
                         <form action="#" class="navbar-form">
                             <div class="input-group">
-                                <input type="Search" placeholder="Buscar..." class="form-control" />
+                                <input type="Search" placeholder="{{ 'box.search'|trans }}" class="form-control" />
                                 <div class="input-group-btn">
                                     <button class="logo btn btn-default">
                                         <span class="logo fa fa-search"></span>
@@ -45,19 +45,19 @@
                     <div class="sub collapse navbar-collapse col-md-11">
                         <ul class="nav navbar-nav">
                             <li class="mainNav tab-movies col-md-2 ">
-                                <a href="{{ path('catalog', { 'mediaType':2 }) }}">Peliculas</a>
+                                <a href="{{ path('catalog', { 'mediaType':2 }) }}">{{ 'menu.movies'|trans }}</a>
                             </li>
                             <li class="mainNav tab-movies col-md-2 ">
-                                <a href="{{ path('catalog', { 'mediaType':3 }) }}">Series</a>
+                                <a href="{{ path('catalog', { 'mediaType':3 }) }}">{{ 'menu.series'|trans }}</a>
                             </li>
                             <li class="mainNav tab-movies col-md-2 ">
-                                <a href="{{ path('catalog', { 'mediaType':1 }) }}">Documentales</a>
+                                <a href="{{ path('catalog', { 'mediaType':1 }) }}">{{ 'menu.documentaries'|trans }}</a>
                             </li>
                             <li class="mainNav tab-movies col-md-2 ">
-                                <a href="{{ path('catalog', { 'mediaType':4 }) }}">Programas</a>
+                                <a href="{{ path('catalog', { 'mediaType':4 }) }}">{{ 'menu.programs'|trans }}</a>
                             </li>
                             <li class="mainNav tab-movies col-md-2 ">
-                                <a href="#">Tendencias</a>
+                                <a href="#">{{ 'menu.tendencies'|trans }}</a>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="menu.movies">
+                <source>menu.movies</source>
+                <target>Peliculas</target>
+            </trans-unit>
+            <trans-unit id="menu.series">
+                <source>menu.series</source>
+                <target>Series</target>
+            </trans-unit>
+            <trans-unit id="menu.documentaries">
+                <source>menu.documentaries</source>
+                <target>Documentales</target>
+            </trans-unit>
+            <trans-unit id="menu.programs">
+                <source>menu.programs</source>
+                <target>Programas</target>
+            </trans-unit>
+            <trans-unit id="menu.tendencies">
+                <source>menu.tendencies</source>
+                <target>Tendencias</target>
+            </trans-unit>
+            <trans-unit id="box.search">
+                <source>box.search</source>
+                <target>Buscar...</target>
+            </trans-unit>
+            <trans-unit id="index.title">
+                <source>index.title</source>
+                <target>Tu TV Online</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
