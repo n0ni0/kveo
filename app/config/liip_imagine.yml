@@ -8,4 +8,8 @@ liip_imagine:
         media:
             filters:
                 upscale: { min: [200, 220] }
-                thumbnail: { size: [200, 220], mode: outbound }
+                thumbnail: { size: [200, 220], mode: inset }
+        bannerw:
+            filters:
+                upscale: { min: [1600, 160] }
+                thumbnail: { size: [1600, 160], mode: inset}

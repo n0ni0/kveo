@@ -22,14 +22,25 @@
                 <source>menu.tendencies</source>
                 <target>Tendencias</target>
             </trans-unit>
+
             <trans-unit id="box.search">
                 <source>box.search</source>
                 <target>Buscar...</target>
             </trans-unit>
+
             <trans-unit id="index.title">
                 <source>index.title</source>
                 <target>Tu TV Online</target>
             </trans-unit>
+
+            <trans-unit id="media.person-title">
+                <source>media.person-title</source>
+                <target>Reparto</target>
+            </trans-unit>
+            <trans-unit id="media.trailer">
+                 <source>media.trailer</source>
+                 <target>Ver trailer</target>
+             </trans-unit>
         </body>
     </file>
 </xliff>

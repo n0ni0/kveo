@@ -5,6 +5,10 @@ body {
     min-height: 100vh;
 }
 
+a {
+    color: #740000;
+}
+
 #headerLogo {
     width: 100%;
     background-color: #bf0000;
@@ -14,6 +18,7 @@ body {
     flex: 1;
     padding-bottom: 10px;
 }
+
 
 .productMenu {
     margin: 0;
@@ -85,25 +90,70 @@ body {
 
 .media-info {
     background-color: white;
-}
-
-.media-card {
-    width: 200px;
+    width: 148px;
 }
 
 .media-title {
     text-align: center;
+    display: block;
+    color: #740000;
 }
 
 /* Flash messages */
 .flash-notice {
     font-size: 18px;
-    color: red;
+    color: #740000;
     text-align: center;
 }
 
 /* carousel*/
-
 #carousel {
     padding-bottom: 12px;
+}
+
+
+/* media page */
+.media-content {
+    background-color: white;
+    text-align: center;
+}
+
+.media-options {
+    margin-left: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.media-big-title {
+    color: #740000;
+}
+
+.media-persons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.media-title-person {
+    background-color: #bf0000;
+    color: #e3dee2;
+    margin-bottom: 15px;
+}
+
+.media-plot {
+    margin-top: 20px;
+}
+
+.media-image {
+    background-color: white;
+    margin-right: 10px;
+}
+
+#media-actions {
+    background-color: #f0f0f0;
+}
+
+#ximage {
+    max-width:100%;
+    margin: 10px auto 10px;
+    display: table;
 }

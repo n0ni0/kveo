@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ selected.title }} {% endblock %}
+
+{% block body %}
+    <div class="media-options">
+        <div class="media-image col-sm-2">
+            <img id="ximage"  src="{{ asset('/images/' ~ selected.img) | imagine_filter('media') }}">
+            <div id="media-actions">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">First item</a>
+                    <a href="#" class="list-group-item">Second item</a>
+                    <a href="#" class="list-group-item">Third item</a>
+                </div>
+            </div>
+            <div class="media-links">
+                <hr>
+                <i class="fa fa-play-circle"></i>
+                <a target="_blank" href="{{ selected.trailer }}">{{ 'media.trailer' |trans }}</a>
+                <hr>
+            </div>
+        </div>
+        <div class="media-content col-sm-9">
+            <div class="media-big-title">
+                <h3>{{ selected.title }}</h3>
+            </div>
+            <div class="media-year">
+                {{ selected.mediaType.name }} | {{ selected.year }} | {{ selected.gender.name }}
+            </div>
+            <div class="media-plot">
+                {{ selected.plot }}
+            </div>
+            <div class="media-persons">
+                <div class="media-title-person">
+                    {{ 'media.person-title'|trans }}
+                </div>
+                <div>
+                    {% for persons in person %}
+                        <div class="container col-md-2">
+                            <i class="fa fa-user fa-2x"></i><br>
+                            <a href="#">{{ persons.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
