@@ -11,11 +11,13 @@
             {% for medias in media %}
                 <div class="media-container">
                     <div class="media-card">
-                        <a href="#"><img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}"></a>
+                        <a href="{{ path("media", {'slug': medias.slug}) }}">
+                            <img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}">
+                        </a>
                     </div>
                     <div class="media-info">
                         <div class="media-title">
-                            {{ medias.title }}
+                            <a href="{{ path("media", {'slug': medias.slug}) }}">{{ medias.title }}</a>
                         </div>
                     </div>
                 </div>
