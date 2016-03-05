@@ -35,10 +35,10 @@
                     {{ 'media.person-title'|trans }}
                 </div>
                 <div>
-                    {% for persons in person %}
+                    {% for selected in selected.persons %}
                         <div class="container col-md-2">
                             <i class="fa fa-user fa-2x"></i><br>
-                            <a href="#">{{ persons.name }}</a>
+                            <a href="#">{{ selected.name }}</a>
                         </div>
                     {% endfor %}
                 </div>

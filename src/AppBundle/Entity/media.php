@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -70,7 +72,7 @@ class Media
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=255, unique=true)
+     * @ORM\Column(name="img", type="string", length=255)
      */
     private $img;
 
@@ -85,6 +87,19 @@ class Media
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="media")
      */
     private $comments;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Person", inversedBy="medias")
+     * @JoinTable(name="medias_persons",
+     *     joinColumns={@JoinColumn(name="media_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@JoinColumn(name="person_id", referencedColumnName="id")}
+     *     )
+     */
+    private $persons;
+
+    public function __construct() {
+        $this->persons = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -344,5 +359,39 @@ class Media
     public function getTrailer()
     {
         return $this->trailer;
+    }
+
+    /**
+     * Add person
+     *
+     * @param \AppBundle\Entity\Person $person
+     *
+     * @return Media
+     */
+    public function addPerson(\AppBundle\Entity\Person $person)
+    {
+        $this->persons[] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Remove person
+     *
+     * @param \AppBundle\Entity\Person $person
+     */
+    public function removePerson(\AppBundle\Entity\Person $person)
+    {
+        $this->persons->removeElement($person);
+    }
+
+    /**
+     * Get persons
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPersons()
+    {
+        return $this->persons;
     }
 }

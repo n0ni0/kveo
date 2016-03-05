@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Antonio
- * Date: 29/02/16
- * Time: 18:16
- */
 
 namespace AppBundle\Controller;
 
@@ -19,13 +13,9 @@ class MediaController extends Controller
     public function showMediaAction($slug)
     {
         $selected = $this->getDoctrine()->getRepository('AppBundle:Media')->findOneBySlug($slug);
-        $id       = $selected->getId();
-
-        $person   = $this->getDoctrine()->getRepository('AppBundle:Person')->findById($id);
-
+        
         return $this->render('media/media.html.twig', array(
             'selected' => $selected,
-            'person'   => $person,
         ));
     }
 }
