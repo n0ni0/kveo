@@ -28,7 +28,7 @@ class MediaTypes extends AbstractFixture implements OrderedFixtureInterface, Con
             'Documental',
             'Película',
             'Serie',
-            'TV Show',
+            'Programa',
         );
 
         foreach($mediaTypes as $mediaType){

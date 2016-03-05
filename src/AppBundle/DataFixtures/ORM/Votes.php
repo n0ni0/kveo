@@ -17,7 +17,7 @@ class Votes extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        for($i=0; $i < 30; $i++) {
+        for($i=1; $i < 30; $i++) {
             $medias      = $manager->getRepository('AppBundle:Media')->findAll();
             $voteTypes   = $manager->getRepository('AppBundle:VoteType')->findAll();
             $users       = $manager->getRepository('AppBundle:User')->findAll();
