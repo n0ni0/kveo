@@ -13,9 +13,13 @@ class MediaController extends Controller
     public function showMediaAction($slug)
     {
         $selected = $this->getDoctrine()->getRepository('AppBundle:Media')->findOneBySlug($slug);
-        
+        $id = $selected->getId();
+
+        $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->findByMedia($id);
+
         return $this->render('media/media.html.twig', array(
             'selected' => $selected,
+            'comment'  => $comments,
         ));
     }
 }

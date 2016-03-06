@@ -133,10 +133,10 @@ a {
     text-align: center;
 }
 
-.media-title-person {
+.media-titles {
     background-color: #bf0000;
     color: #e3dee2;
-    margin-bottom: 15px;
+    margin: 15px 0 15px;
 }
 
 .media-plot {
@@ -156,4 +156,14 @@ a {
     max-width:100%;
     margin: 10px auto 10px;
     display: table;
+}
+
+/* media comments */
+.comment-text {
+    text-align: left;
+}
+
+.comment-content {
+    margin-top: 10px;
+    color: #9f9fa3;
 }

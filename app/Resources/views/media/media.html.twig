@@ -31,10 +31,10 @@
                 {{ selected.plot }}
             </div>
             <div class="media-persons">
-                <div class="media-title-person">
+                <div class="media-titles">
                     {{ 'media.person-title'|trans }}
                 </div>
-                <div>
+                <div class="container-fluid">
                     {% for selected in selected.persons %}
                         <div class="container col-md-2">
                             <i class="fa fa-user fa-2x"></i><br>
@@ -42,6 +42,22 @@
                         </div>
                     {% endfor %}
                 </div>
+            </div>
+            <div class="media-comments">
+                <div class="media-titles">
+                    {{ 'media.comments' |trans }}
+                </div>
+                    {% for comments in comment %}
+                            <div class="comment-text">
+                                <i class="fa fa-user fa-2x"></i>
+                                {{ comments.user }}
+                                {{ comments.publishedAt|date('d-m-Y H:i') }}
+                                <div class="comment-content">
+                                    {{ comments.comment }}
+                                </div>
+                                <hr>
+                            </div>
+                    {% endfor %}
             </div>
         </div>
     </div>

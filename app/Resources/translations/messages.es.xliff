@@ -41,6 +41,10 @@
                  <source>media.trailer</source>
                  <target>Ver trailer</target>
              </trans-unit>
+            <trans-unit id="media.comments">
+                <source>media.comments</source>
+                <target>Comentarios</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
