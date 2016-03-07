@@ -167,3 +167,26 @@ a {
     margin-top: 10px;
     color: #9f9fa3;
 }
+
+/* login */
+.ccc{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: fixed;
+    background-color: #93282e;
+}
+
+.login-box {
+    background-color: #9f9fa3;
+    padding: 0 5px 10px 5px;
+    float: none;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.company-name {
+    text-align: center;
+}

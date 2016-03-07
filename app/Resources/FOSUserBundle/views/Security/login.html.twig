@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="ccc container">
+        <div class="login-box col-md-3">
+            <form class="form-signing" action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="company-name">
+                    <h1 class="form-signing-heading text-align-center"><i class="fa fa-television"></i>
+                        {{ 'login.company_name'|trans({}, 'messages') }}
+                    </h1>
+                </div>
+
+                <input type="text" class="form-control" id="username" name="_username"
+                       value="{{ last_username }}" required="required" placeholder= "{{ 'security.login.username_email'|trans }}"/>
+
+                <input type="password" class="form-control" id="password" name="_password"
+                       required="required" placeholder="{{ 'security.login.password'|trans }}"/>
+
+                <div class="checkbox">
+                    <label id="remember_me_login">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        {{ 'security.login.remember_me'|trans }}
+                </div>
+                <button class="btn btn-lg btn-danger btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+                <a id="forgot_password" href="{{ path('fos_user_resetting_request')  }}">
+                    {{ 'forgot_password.user'|trans }}</a>
+            </form>
+        </div>
+
+        {% if error %}
+            <div id="loginError" class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"
+                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}
