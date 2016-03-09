@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %} {{ 'index.title'|trans }}{% endblock %}
 
@@ -8,19 +8,19 @@
     {% include 'includes/carousel.html.twig' %}
 
     <div class="media-grid container-fluid">
-            {% for medias in media %}
-                <div class="media-container">
-                    <div class="media-card">
-                        <a href="{{ path("media", {'slug': medias.slug}) }}">
-                            <img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}">
-                        </a>
-                    </div>
-                    <div class="media-info">
-                        <div class="media-title">
-                            <a href="{{ path("media", {'slug': medias.slug}) }}">{{ medias.title }}</a>
-                        </div>
+        {% for medias in media %}
+            <div class="media-container">
+                <div class="media-card">
+                    <a href="{{ path("media", {'slug': medias.slug}) }}">
+                        <img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}">
+                    </a>
+                </div>
+                <div class="media-info">
+                    <div class="media-title">
+                        <a href="{{ path("media", {'slug': medias.slug}) }}">{{ medias.title }}</a>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

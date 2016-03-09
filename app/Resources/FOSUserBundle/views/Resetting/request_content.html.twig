@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="fos-reset col-md-6 col-md-offset-3">
+        <h2 class="form-signing-heading text-align-center"><i class="fa fa-television"></i>
+            {{ 'login.company_name'|trans({}, 'messages') }}
+        </h2>
+        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+            <h2>{{ 'resetting.text.title'|trans }}</br></h2>
+            {{ 'resetting.text.description'|trans }}
+            <div>
+                {% if invalid_username is defined %}
+                    <div class="alert alert-danger alert-dismissable">
+                        {{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <input id="user_reset_password_text" type="text" class="form-control" id="username" name="username"
+                       required="required" placeholder="{{ 'security.login.username_email'|trans }}" />
+            </div>
+            <div>
+                <button class="btn_resetting_button btn btn-md btn-danger pull-right" type="submit">{{ 'resetting.request.submit'|trans }}</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
