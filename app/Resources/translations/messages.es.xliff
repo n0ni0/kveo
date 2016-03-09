@@ -2,9 +2,27 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
         <body>
+           <trans-unit id="btn.edit_user_profile">
+                <source>btn.edit_user_profile</source>
+                <target>Editar perfíl</target>
+            </trans-unit>
+           <trans-unit id="btn.change_user_password">
+                <source>btn.change_user_password</source>
+                <target>Cambiar contraseña</target>
+            </trans-unit>
+           <trans-unit id="btn.back">
+                <source>btn.back</source>
+                <target>Volver</target>
+            </trans-unit>
+
             <trans-unit id="login.company_name">
                 <source>login.company_name</source>
                 <target>kveo</target>
+            </trans-unit>
+
+            <trans-unit id="profile.personal_info">
+                <source>profile.personal_info</source>
+                <target>Información personal</target>
             </trans-unit>
 
             <trans-unit id="menu.movies">
@@ -49,6 +67,16 @@
             <trans-unit id="media.comments">
                 <source>media.comments</source>
                 <target>Comentarios</target>
+            </trans-unit>
+
+            <trans-unit id="user.profile">
+                <source>user.profile</source>
+                <target> Perfil</target>
+            </trans-unit>
+
+            <trans-unit id="user.logout">
+                <source>user.logout</source>
+                <target> Salir</target>
             </trans-unit>
         </body>
     </file>

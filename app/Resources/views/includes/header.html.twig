@@ -14,6 +14,18 @@
             </form>
         </div>
         <div class="user-profile pull-right">
+
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button"
+                        id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i> {{ app.user.username }}
+                    <span class="caret"></span>
+                </button>
+                <ul class="c dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-cog"></i>{{ 'user.profile'|trans }}</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}"> <i class="fa fa-sign-out"></i>{{ 'user.logout'|trans }}</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <nav class="productMenu navbar navbar-default no-margin" >

@@ -5,6 +5,10 @@ body {
     min-height: 100vh;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 a {
     color: #740000;
 }
@@ -189,4 +193,34 @@ a {
 
 .company-name {
     text-align: center;
+}
+
+/* user */
+.user-profile {
+    margin: 10px 0 10px;
+}
+
+.user-profile a {
+    color: #e3dee2;
+}
+
+/* FOSUser */
+.fos_user_user_profile {
+    padding: 0 10px 10px 10px;
+    float: none;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.profile-title {
+    text-align: center;
+}
+
+#user_reset_password_text {
+    margin-bottom: 10px;
+}
+
+.fos-reset {
+    margin-top: 5%;
 }
