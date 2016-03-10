@@ -4,3 +4,6 @@ parameters:
 services:
     slugger:
         class: AppBundle\Utils\Slugger
+
+    term_splitter:
+        class: AppBundle\Utils\TermSplitter
