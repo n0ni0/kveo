@@ -78,6 +78,16 @@
                 <source>user.logout</source>
                 <target> Salir</target>
             </trans-unit>
+
+            <trans-unit id="media.search_for">
+                <source>media.search_for</source>
+                <target> Buscar ...</target>
+            </trans-unit>
+
+             <trans-unit id="media.no_posts_found">
+                 <source>media.no_posts_found</source>
+                 <target>No se han encontrado coincidencias</target>
+             </trans-unit>
         </body>
     </file>
 </xliff>

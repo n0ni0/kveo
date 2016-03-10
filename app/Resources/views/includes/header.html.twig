@@ -1,24 +1,19 @@
 <header id="header">
     <div id="headerLogo" class="container">
         <a href="{{ path('home') }}"><i class="logo fa fa-television fa-4x pull-left">kveo</i></a>
-        <div class="search-box col-md-3">
-            <form action="#" class="navbar-form">
-                <div class="input-group">
-                    <input type="Search" placeholder="{{ 'box.search'|trans }}" class="form-control" />
-                    <div class="input-group-btn">
-                        <button class="logo btn btn-default">
-                            <span class="logo fa fa-search"></span>
-                        </button>
-                    </div>
+
+        <div class="search-bar col-sm-3">
+            <form action="{{ path('media_search') }}" method="get">
+                <div class="input-group-sm">
+                    <input name="q" type="text" class="form-control" placeholder="{{ 'media.search_for'|trans }}" autocomplete="off">
                 </div>
             </form>
         </div>
         <div class="user-profile pull-right">
-
             <div class="dropdown">
                 <button class="btn btn-danger dropdown-toggle" type="button"
                         id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user"></i> {{ app.user.username }}
+                    <i class="fa fa-user"></i> {{ app.user.username }}
                     <span class="caret"></span>
                 </button>
                 <ul class="c dropdown-menu" aria-labelledby="dropdownMenu2">
