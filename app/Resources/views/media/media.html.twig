@@ -47,17 +47,20 @@
                 <div class="media-titles">
                     {{ 'media.comments' |trans }}
                 </div>
-                    {% for comments in comment %}
-                            <div class="comment-text">
-                                <i class="fa fa-user fa-2x"></i>
-                                {{ comments.user }}
-                                {{ comments.publishedAt|date('d-m-Y H:i') }}
-                                <div class="comment-content">
-                                    {{ comments.comment }}
-                                </div>
-                                <hr>
-                            </div>
-                    {% endfor %}
+                <div class="comments">
+                    {{ render(controller('AppBundle:Comment:newComment',{'media': selected.id})) }}
+                </div>
+                {% for comments in comment %}
+                    <div class="comment-text">
+                        <i class="fa fa-user fa-2x"></i>
+                        {{ comments.user }}
+                        {{ comments.publishedAt|date('d-m-Y H:i') }}
+                        <div class="comment-content">
+                            {{ comments.comment }}
+                        </div>
+                        <hr>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -15,7 +15,10 @@ class MediaController extends Controller
         $selected = $this->getDoctrine()->getRepository('AppBundle:Media')->findOneBySlug($slug);
         $id = $selected->getId();
 
-        $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->findByMedia($id);
+        $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->findByMedia(
+            array('id'          => $id),
+            array('publishedAt' => 'DESC'
+            ));
 
         return $this->render('media/media.html.twig', array(
             'selected' => $selected,

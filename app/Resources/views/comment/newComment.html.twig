@@ -1,0 +1,5 @@
+{{ form_start(form, {method: 'POST', action: path('create_comment', {'media': media.id }) }) }}
+    {{ form_row(form.comment) }}
+<button type="submit" class="btn btn-xs btn-danger">{{ 'btn.send' |trans }}</button>
+{{ form_end(form) }}
+

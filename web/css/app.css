@@ -228,3 +228,8 @@ a {
 .search-bar {
     margin-top: 10px;
 }
+
+/* comments */
+.comment-input {
+    resize: none;
+}
