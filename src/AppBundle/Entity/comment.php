@@ -29,9 +29,8 @@ class Comment
     private $comment;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 
@@ -93,11 +92,11 @@ class Comment
     /**
      * Set user
      *
-     * @param string $user
+     * @param \AppBundle\Entity\user $user
      *
      * @return comment
      */
-    public function setUser($user)
+    public function setUser(\AppBundle\Entity\User $user)
     {
         $this->user = $user;
 

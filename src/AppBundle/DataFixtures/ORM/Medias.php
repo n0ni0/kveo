@@ -23,12 +23,13 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
 
     public function load(ObjectManager $manager)
     {
+        $mediaTypes = $manager->getRepository('AppBundle:MediaType')->findAll();
+        $genders    = $manager->getRepository('AppBundle:Gender')->findAll();
+
         for($i=1; $i <1000; $i++) {
 
-            $mediaTypes = $manager->getRepository('AppBundle:MediaType')->findAll();
-            $genders    = $manager->getRepository('AppBundle:Gender')->findAll();
             $mediaType  = $mediaTypes[array_rand($mediaTypes)];
-            $gender     = $genders[array_rand($mediaTypes)];
+            $gender     = $genders[array_rand($genders)];
 
             $media = new Media();
             $media->setMediaType($mediaType);
