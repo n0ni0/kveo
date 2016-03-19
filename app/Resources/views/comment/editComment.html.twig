@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{ 'comment.edit' |trans }} {% endblock %}
+
+{% block body %}
+    <div class="profile-title">
+        {{ comment.media.title }} | {{ 'comment.edit' |trans }}
+    </div>
+    <div class="general-comment container col-md-10 col-md-offset-1">
+            <div class="comment-image col-md-2 text-center">
+                <img id="image-comment"  src="{{ asset('/images/' ~ comment.media.img) | imagine_filter('media') }}">
+            </div>
+
+        <div class="comment-content container col-md-10">
+            <div class="comment-title">
+                {% if comment.editedAt is not null %}
+                    {{ comment.editedAt|date('d-m-Y H:i') }}
+                {% else %}
+                    {{ comment.publishedAt|date('d-m-Y H:i') }}
+                {% endif %}
+                {{ comment.user }}  {{ 'comment.wrote' |trans }}
+            </div>
+            <div class="comment-form">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="{{ 'comment.edit' |trans }}" class="btn btn-danger pull-right" />
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
