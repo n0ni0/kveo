@@ -35,7 +35,7 @@ class Comment
     private $user;
 
     /**
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\media", inversedBy="comments")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Media", inversedBy="comments")
      *@ORM\JoinColumn(name="media_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $media;

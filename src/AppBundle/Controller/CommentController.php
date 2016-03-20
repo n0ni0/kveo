@@ -76,11 +76,24 @@ class CommentController extends Controller
         }
 
         return $this->render('comment/editComment.html.twig', array(
-            'comment' => $comment,
-            'form'    => $form->createView()
+            'comment'     => $comment,
+            'form'        => $form->createView(),
         ));
-
     }
 
+    /**
+     * @Route("/{media}/comment/{id}/delete", name="comment_delete")
+     * @ParamConverter("media", class="AppBundle:Media")
+     */
+    public function deleteCommentAction(Comment $comment, Media $media)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($comment);
+        $em->flush();
+
+        return $this->redirectToRoute('media', array(
+            'slug' => $media->getSlug(),
+        ));
+    }
 
 }
