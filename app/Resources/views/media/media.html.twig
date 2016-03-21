@@ -55,14 +55,16 @@
                         <i class="fa fa-user fa-2x"></i>
                         {{ comments.user }}
                         {{ comments.publishedAt|date('d-m-Y H:i') }}
-                        <a href="{{ path('comment_edit', { 'id':comments.id, 'media': selected.id }) }}"
-                           class="btn btn-xs btn-default">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <a href="{{ path('comment_delete', { 'id':comments.id, 'media': selected.id }) }}"
-                           class="btn btn-xs btn-default">
-                            <i class="fa fa-trash-o"></i>
-                        </a>
+                        {% if is_granted('EDIT', comments) %}
+                            <a href="{{ path('comment_edit', { 'id':comments.id, 'media': selected.id }) }}"
+                               class="btn btn-xs btn-default">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="{{ path('comment_delete', { 'id':comments.id, 'media': selected.id }) }}"
+                               class="btn btn-xs btn-default">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        {% endif %}
                         {%  if comments.editedAt is not null %}
                             <div id="commentEdited">
                                 <span class="commentEdited label label-default">
