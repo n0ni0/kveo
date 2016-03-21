@@ -7,3 +7,11 @@ services:
 
     term_splitter:
         class: AppBundle\Utils\TermSplitter
+
+    comment_voter:
+        class: AppBundle\Security\CommentVoter
+        arguments:
+            - "@security.access.decision_manager"
+        public: false
+        tags:
+            - { name: security.voter }

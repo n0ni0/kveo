@@ -17,9 +17,10 @@ class Comments extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager)
     {
+        $medias = $manager->getRepository('AppBundle:Media')->findAll();
+        $users = $manager->getRepository('AppBundle:User')->findAll();
+
         for($i=1; $i < 50; $i++) {
-            $medias = $manager->getRepository('AppBundle:Media')->findAll();
-            $users = $manager->getRepository('AppBundle:User')->findAll();
             $user = $users[array_rand($users)];
             $media = $medias[array_rand($medias)];
 

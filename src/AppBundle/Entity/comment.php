@@ -29,24 +29,30 @@ class Comment
     private $comment;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 
     /**
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\media", inversedBy="comments")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Media", inversedBy="comments")
      *@ORM\JoinColumn(name="media_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $media;
 
     /**
-     * @var datetime
+     * @var \datetime
      *
      * @ORM\Column(name="publishedAt", type="datetime")
      */
     private $publishedAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="editedAt", type="datetime", nullable=true)
+     */
+    private $editedAt;
 
     /**
      * Comment constructor.
@@ -93,11 +99,11 @@ class Comment
     /**
      * Set user
      *
-     * @param string $user
+     * @param \AppBundle\Entity\user $user
      *
      * @return comment
      */
-    public function setUser($user)
+    public function setUser(\AppBundle\Entity\User $user)
     {
         $this->user = $user;
 
@@ -141,7 +147,7 @@ class Comment
     /**
      * Get publishedAt
      *
-     * @return datetime
+     * @return \datetime
      */
     public function getPublishedAt()
     {
@@ -156,5 +162,28 @@ class Comment
     public function setPublishedAt(\DateTime $publishedAt)
     {
         $this->publishedAt = $publishedAt;
+    }
+
+    /**
+     * Set editedAt
+     *
+     * @param \DateTime $editedAt
+     * @return Comment
+     */
+    public function setEditedAt($editedAt)
+    {
+        $this->editedAt = $editedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get editedAt
+     *
+     * @return \DateTime
+     */
+    public function getEditedAt()
+    {
+        return $this->editedAt;
     }
 }

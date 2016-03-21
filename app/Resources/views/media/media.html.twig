@@ -47,17 +47,38 @@
                 <div class="media-titles">
                     {{ 'media.comments' |trans }}
                 </div>
-                    {% for comments in comment %}
-                            <div class="comment-text">
-                                <i class="fa fa-user fa-2x"></i>
-                                {{ comments.user }}
-                                {{ comments.publishedAt|date('d-m-Y H:i') }}
-                                <div class="comment-content">
-                                    {{ comments.comment }}
-                                </div>
-                                <hr>
+                <div class="comments">
+                    {{ render(controller('AppBundle:Comment:newComment',{'media': selected.id})) }}
+                </div>
+                {% for comments in comment %}
+                    <div class="comment-text">
+                        <i class="fa fa-user fa-2x"></i>
+                        {{ comments.user }}
+                        {{ comments.publishedAt|date('d-m-Y H:i') }}
+                        {% if is_granted('EDIT', comments) %}
+                            <a href="{{ path('comment_edit', { 'id':comments.id, 'media': selected.id }) }}"
+                               class="btn btn-xs btn-default">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="{{ path('comment_delete', { 'id':comments.id, 'media': selected.id }) }}"
+                               class="btn btn-xs btn-default">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        {% endif %}
+                        {%  if comments.editedAt is not null %}
+                            <div id="commentEdited">
+                                <span class="commentEdited label label-default">
+                                   {{ 'label.edited' |trans }} {{ comments.editedAt|date('d-m-Y H:i') }}
+                                </span>
                             </div>
-                    {% endfor %}
+                        {% endif %}
+
+                        <div class="comment-content">
+                            {{ comments.comment }}
+                        </div>
+                        <hr>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

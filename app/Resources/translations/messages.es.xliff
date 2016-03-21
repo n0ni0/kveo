@@ -14,6 +14,15 @@
                 <source>btn.back</source>
                 <target>Volver</target>
             </trans-unit>
+           <trans-unit id="btn.send">
+                <source>btn.send</source>
+                <target>Enviar</target>
+            </trans-unit>
+
+           <trans-unit id="label.edited">
+                <source>label.edited</source>
+                <target>Editado</target>
+            </trans-unit>
 
             <trans-unit id="login.company_name">
                 <source>login.company_name</source>
@@ -87,6 +96,15 @@
              <trans-unit id="media.no_posts_found">
                  <source>media.no_posts_found</source>
                  <target>No se han encontrado coincidencias</target>
+             </trans-unit>
+
+             <trans-unit id="comment.edit">
+                 <source>comment.edit</source>
+                 <target>Editar comentario</target>
+             </trans-unit>
+             <trans-unit id="comment.wrote">
+                <source>comment.wrote</source>
+                <target>escribió: </target>
              </trans-unit>
         </body>
     </file>

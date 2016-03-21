@@ -17,10 +17,11 @@ class States extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager)
     {
+        $medias      = $manager->getRepository('AppBundle:Media')->findAll();
+        $mediaStates = $manager->getRepository('AppBundle:MediaState')->findAll();
+        $users       = $manager->getRepository('AppBundle:User')->findAll();
+
         for($i=1; $i < 30; $i++) {
-            $medias      = $manager->getRepository('AppBundle:Media')->findAll();
-            $mediaStates = $manager->getRepository('AppBundle:MediaState')->findAll();
-            $users       = $manager->getRepository('AppBundle:User')->findAll();
 
             $media       = $medias[array_rand($medias)];
             $mediaState  = $mediaStates[array_rand($mediaStates)];
