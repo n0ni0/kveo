@@ -21,6 +21,7 @@ a {
 .wrap{
     flex: 1;
     padding-bottom: 10px;
+    background-image: url("/images/background-image.jpg");
 }
 
 
@@ -72,6 +73,7 @@ a {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 2px;
+    color: #e3dee2;
 }
 
 /* footer*/
@@ -173,6 +175,17 @@ a {
     color: #9f9fa3;
 }
 
+/* register */
+.register-btn a{
+    color: #ffffff;
+}
+
+.create-user-confirmed {
+    margin-top: 80px;
+    background-color: #9F9FA3;
+    text-align: center;
+}
+
 /* login */
 .ccc{
     height: 100%;
@@ -181,7 +194,6 @@ a {
     top: 0;
     overflow: hidden;
     position: fixed;
-    background-color: #93282e;
 }
 
 .login-box {
@@ -190,6 +202,11 @@ a {
     float: none;
     margin: 0 auto;
     border-radius: 5px;
+}
+
+#login-Error {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .company-name {

@@ -116,6 +116,11 @@
                   <target>Siguiente</target>
                </trans-unit>
 
+              <trans-unit id="register.link">
+                <source>register.link</source>
+                  <target>Regístrate</target>
+               </trans-unit>
+
         </body>
     </file>
 </xliff>
