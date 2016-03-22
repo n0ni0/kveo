@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="ccc container">
+        <div class="login-box col-md-3">
+        <form class="form-signing" action="{{ path('fos_user_registration_register') }}" method="POST" class="fos_user_registration_register">
+            <div class="company-name">
+                <h1 class="form-signing-heading text-align-center"><i class="fa fa-television"></i>
+                    {{ 'login.company_name'|trans({}, 'messages') }}
+                </h1>
+            </div>
+            {{ form_widget(form) }}
+            <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-lg btn-danger btn-block"/>
+            </div>
+    </div>
+{% endblock %}
+
