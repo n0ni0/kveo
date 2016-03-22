@@ -269,3 +269,14 @@ a {
 #submitButton {
     margin-bottom: 10px;
 }
+
+/* pagination */
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    z-index: 3;
+    color: #e3dee2;
+    background-color: #bf0000;
+    border-color: #ddd;
+}

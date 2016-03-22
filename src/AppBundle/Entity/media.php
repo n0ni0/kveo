@@ -15,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Media
 {
+    const NUM_ITEMS = 24;
+
     /**
      * @var int
      *
