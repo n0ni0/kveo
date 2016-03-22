@@ -2,26 +2,34 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Media;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends Controller
 {
     /**
      * @Route("/", name="home")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $media = $this->getDoctrine()->getRepository('AppBundle:Media')->findAll();
+
+        $paginator = $this->get('knp_paginator');
+        $medias    = $paginator->paginate(
+            $media,
+            $request->query->getInt('page', 1), $pages = Media::NUM_ITEMS);
+
         return $this->render('home/index.html.twig', array(
-            'media' => $media
+            'medias'      => $medias,
         ));
     }
 
     /**
      * @Route("/catalog/{mediaType}/", name="catalog")
      */
-    public function catalogAction($mediaType)
+    public function catalogAction(Request $request, $mediaType)
     {
         $media      = $this->getDoctrine()->getRepository('AppBundle:Media')->findByMediaType($mediaType);
         $mediaTypes = $this->getDoctrine()->getRepository('AppBundle:MediaType')->findOneById($mediaType);
@@ -33,9 +41,14 @@ class HomeController extends Controller
             );
         }
 
+        $paginator = $this->get('knp_paginator');
+        $medias    = $paginator->paginate(
+            $media,
+            $request->query->getInt('page', 1), $pages = Media::NUM_ITEMS);
+
         return $this->render('home/catalog.html.twig', array(
-            'media'      => $media,
-            'mediaTypes' => $mediaTypes
+            'medias'      => $medias,
+            'mediaTypes'  => $mediaTypes
         ));
     }
 }

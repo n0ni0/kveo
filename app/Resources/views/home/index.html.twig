@@ -8,19 +8,22 @@
     {% include 'includes/carousel.html.twig' %}
 
     <div class="media-grid container-fluid">
-        {% for medias in media %}
+        {% for media in medias %}
             <div class="media-container">
                 <div class="media-card">
-                    <a href="{{ path("media", {'slug': medias.slug}) }}">
-                        <img src="{{ asset('/images/' ~ medias.img) | imagine_filter('media') }}">
+                    <a href="{{ path("media", {'slug': media.slug}) }}">
+                        <img src="{{ asset('/images/' ~ media.img) | imagine_filter('media') }}">
                     </a>
                 </div>
                 <div class="media-info">
                     <div class="media-title">
-                        <a href="{{ path("media", {'slug': medias.slug}) }}">{{ medias.title }}</a>
+                        <a href="{{ path("media", {'slug': media.slug}) }}">{{ media.title }}</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
+        <div class="paginator">
+            {{ knp_pagination_render(medias) }}
+        </div>
     </div>
 {% endblock %}

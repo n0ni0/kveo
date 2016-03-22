@@ -106,6 +106,16 @@
                 <source>comment.wrote</source>
                 <target>escribió: </target>
              </trans-unit>
+
+             <trans-unit id="Previous">
+                <source>Previous</source>
+                <target>Anterior</target>
+             </trans-unit>
+              <trans-unit id="Next">
+                <source>Next</source>
+                  <target>Siguiente</target>
+               </trans-unit>
+
         </body>
     </file>
 </xliff>
