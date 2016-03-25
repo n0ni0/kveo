@@ -13,8 +13,7 @@
             <div class="dropdown">
                 <button class="btn btn-danger dropdown-toggle" type="button"
                         id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user"></i> {{ app.user.username }}
-                    <span class="caret"></span>
+                    <img class="avatar" src="{{ gravatar(app.user.email, 35) }}" /></i> {{ app.user.username }}
                 </button>
                 <ul class="c dropdown-menu" aria-labelledby="dropdownMenu2">
                     <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-cog"></i>{{ 'user.profile'|trans }}</a></li>

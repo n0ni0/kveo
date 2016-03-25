@@ -137,6 +137,13 @@
                 <source>person.filmography</source>
                   <target>Filmografía</target>
                </trans-unit>
+
+              <trans-unit id="profile.gravatar_link">
+                <source>profile.gravatar_link</source>
+                  <target>Añade o edita tu foto de perfíl con</target>
+               </trans-unit>
+
+
         </body>
     </file>
 </xliff>

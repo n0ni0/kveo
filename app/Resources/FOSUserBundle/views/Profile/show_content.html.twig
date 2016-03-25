@@ -8,17 +8,21 @@
         <div class="profile-title">
             <h3>{{ 'profile.personal_info'|trans({}, 'messages') }}</h3>
         </div>
-        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        <div class="gravatar col-md-5">
+            <img class="avatar" src="{{ gravatar(app.user.email, 150) }}" />
+        </div>
+        <div class="profile-content">
+            <p><strong>{{ 'profile.show.username'|trans }}:</strong> {{ user.username }}</p>
+            <p><strong>{{ 'profile.show.email'|trans }}:</strong> {{ user.email }}</p>
 
-        <div class="panel_footer">
-            <a class="btn btn-danger btn-xs" href="{{ path('fos_user_profile_edit') }}">
-                {{ 'btn.edit_user_profile'|trans({}, 'messages') }}
-            </a>
-            <a class="btn btn-danger btn-xs" href="{{ path('fos_user_change_password') }}">
-                {{ 'btn.change_user_password'|trans({}, 'messages') }}
-            </a>
+            <div class="panel_footer">
+                <a class="btn btn-danger btn-xs" href="{{ path('fos_user_profile_edit') }}">
+                    {{ 'btn.edit_user_profile'|trans({}, 'messages') }}
+                </a>
+                <a class="btn btn-danger btn-xs" href="{{ path('fos_user_change_password') }}">
+                    {{ 'btn.change_user_password'|trans({}, 'messages') }}
+                </a>
+            </div>
         </div>
     </div>
-
 {% endblock %}
