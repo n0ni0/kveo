@@ -121,6 +121,22 @@
                   <target>Regístrate</target>
                </trans-unit>
 
+              <trans-unit id="person.birthplace">
+                <source>person.birthplace</source>
+                  <target>Nacido en:</target>
+               </trans-unit>
+              <trans-unit id="person.age">
+                <source>person.age</source>
+                  <target>Edad:</target>
+               </trans-unit>
+              <trans-unit id="person.biography">
+                <source>person.biography</source>
+                  <target>Biografía:</target>
+               </trans-unit>
+              <trans-unit id="person.filmography">
+                <source>person.filmography</source>
+                  <target>Filmografía</target>
+               </trans-unit>
         </body>
     </file>
 </xliff>
