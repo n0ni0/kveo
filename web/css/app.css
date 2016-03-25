@@ -13,6 +13,10 @@ a {
     color: #740000;
 }
 
+ul li {
+    list-style: none;
+}
+
 #headerLogo {
     width: 100%;
     background-color: #bf0000;
@@ -89,7 +93,6 @@ a {
     float: left;
     padding-top: 5px;
     margin-left: 5px;
-    border-bottom-style: solid;
     border-width: 1px;
     border-color: #b7b7bc;
 }
@@ -143,6 +146,7 @@ a {
     background-color: #bf0000;
     color: #e3dee2;
     margin: 15px 0 15px;
+    text-align: center;
 }
 
 .media-plot {
@@ -296,4 +300,16 @@ a {
     color: #e3dee2;
     background-color: #bf0000;
     border-color: #ddd;
+}
+
+/* person */
+.person-big-title {
+    color: #740000;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.person-content{
+    margin-top: 15px;
+    background-color: #ffffff;
 }

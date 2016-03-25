@@ -38,7 +38,7 @@
                     {% for selected in selected.persons %}
                         <div class="container col-md-2">
                             <i class="fa fa-user fa-2x"></i><br>
-                            <a href="#">{{ selected.name }}</a>
+                            <a href="{{ path('person_show', { 'slug':selected.slug} )  }}">{{ selected.name }}</a>
                         </div>
                     {% endfor %}
                 </div>

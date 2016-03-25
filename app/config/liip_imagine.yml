@@ -13,3 +13,7 @@ liip_imagine:
             filters:
                 upscale: { min: [1600, 160] }
                 thumbnail: { size: [1600, 160], mode: inset}
+        filmography:
+            filters:
+                upscale: { min: [150, 170] }
+                thumbnail: { size: [150, 170], mode: inset}
