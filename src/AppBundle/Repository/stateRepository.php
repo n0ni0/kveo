@@ -10,4 +10,18 @@ namespace AppBundle\Repository;
  */
 class StateRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findCollection($user)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql  = 'SELECT s.mediaState_id, m.title, m.slug, m.img
+                   FROM state as s
+             INNER JOIN media AS m ON (m.id = s.media_id)
+                  WHERE s.user_id = :user
+               ORDER BY m.title ASC';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue('user', $user);
+        $stmt->execute();
+        return $stmt;
+    }
 }

@@ -49,6 +49,9 @@
                 <li class="mainNav tab-movies col-md-2 ">
                     <a href="#">{{ 'menu.tendencies'|trans }}</a>
                 </li>
+                <li class="mainNav tab-movies col-md-2">
+                    <a href="{{ path('collection_show', { 'slug': app.user.usernameCanonical }) }}">{{ 'menu.collection'|trans }}</a>
+                </li>
             </ul>
         </div>
     </nav>

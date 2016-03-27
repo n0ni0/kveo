@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{ 'menu.collection'|trans }}{% endblock %}
+
+{% block body %}
+    <h2 class="title container"> {{ 'menu.collection'|trans }}</h2>
+    <div class="media-grid container-fluid">
+        {% for collection in collection %}
+            <div class="media-container">
+                <div class="media-card">
+                    <a href="{{ path("media", {'slug':collection.slug}) }}">
+                        <img src="{{ asset('/images/' ~ collection.img) | imagine_filter('media') }}">
+                    </a>
+                </div>
+                <div class="media-info">
+                    <div class="media-title">
+                        <a href="{{ path("media", {'slug': collection.slug}) }}">{{ collection.title }}</a>
+                        <div class="media-status">
+                            {% if collection.mediaState_id == 1 %}
+                                <i class="status fa fa-eye fa-2x"></i>{{ 'collection.following'|trans }}
+                            {% elseif collection.mediaState_id == 2 %}
+                                <i class="status fa fa-clock-o fa-2x"></i>{{ 'collection.pending'|trans }}
+                            {% elseif collection.mediaState_id == 3%}
+                                <i class="status fa fa-check fa-2x"></i>{{ 'collection.finish'|trans }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

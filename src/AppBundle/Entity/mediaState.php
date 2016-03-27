@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Mediastate
+ * MediaState
  *
  * @ORM\Table(name="media_state")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MediaStateRepository")
  */
-class Mediastate
+class MediaState
 {
     /**
      * @var int

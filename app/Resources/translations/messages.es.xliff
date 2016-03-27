@@ -54,6 +54,10 @@
                 <source>menu.tendencies</source>
                 <target>Tendencias</target>
             </trans-unit>
+            <trans-unit id="menu.collection">
+                <source>menu.collection</source>
+                <target>Colección</target>
+            </trans-unit>
 
             <trans-unit id="box.search">
                 <source>box.search</source>
@@ -143,7 +147,18 @@
                   <target>Añade o edita tu foto de perfíl con</target>
                </trans-unit>
 
-
+              <trans-unit id="collection.following">
+                <source>collection.following</source>
+                  <target>Siguiendo</target>
+               </trans-unit>
+              <trans-unit id="collection.pending">
+                <source>collection.pending</source>
+                  <target>Pendiente</target>
+               </trans-unit>
+              <trans-unit id="collection.finish">
+                <source>collection.finish</source>
+                  <target>Finalizado</target>
+               </trans-unit>
         </body>
     </file>
 </xliff>

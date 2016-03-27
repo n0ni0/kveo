@@ -324,3 +324,15 @@ ul li {
 .gravatar-link{
     margin-top: 15px;
 }
+
+/* collection */
+.media-status{
+    background-color: #e3dee2;
+    padding-top: 5px;
+    height: 40px;
+    color: #bf0000;
+}
+
+.status {
+    margin-right: 15px;
+}
