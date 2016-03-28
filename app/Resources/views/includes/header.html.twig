@@ -47,7 +47,7 @@
                     <a href="{{ path('catalog', { 'mediaType':4 }) }}">{{ 'menu.programs'|trans }}</a>
                 </li>
                 <li class="mainNav tab-movies col-md-2 ">
-                    <a href="#">{{ 'menu.tendencies'|trans }}</a>
+                    <a href="{{ path('home') }}">{{ 'menu.tendencies'|trans }}</a>
                 </li>
                 <li class="mainNav tab-movies col-md-2">
                     <a href="{{ path('collection_show', { 'slug': app.user.usernameCanonical }) }}">{{ 'menu.collection'|trans }}</a>

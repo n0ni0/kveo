@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $media = $this->getDoctrine()->getRepository('AppBundle:Media')->findAll();
+        $media = $this->getDoctrine()->getRepository('AppBundle:Vote')->findMediaTrends();
 
         $paginator = $this->get('knp_paginator');
         $medias    = $paginator->paginate(
