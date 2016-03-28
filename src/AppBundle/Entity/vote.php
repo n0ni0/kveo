@@ -22,19 +22,19 @@ class Vote
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\media")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Media")
      * @ORM\JoinColumn(name="media_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $media;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\user")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\voteType")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\VoteType")
      * @ORM\JoinColumn(name="voteType_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $voteType;
