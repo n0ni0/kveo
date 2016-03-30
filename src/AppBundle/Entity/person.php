@@ -231,4 +231,8 @@ class Person
     {
         return $this->medias;
     }
+
+    public function __toString(){
+        return $this->getName();
+    }
 }

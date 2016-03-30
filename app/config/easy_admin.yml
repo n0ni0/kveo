@@ -1,0 +1,110 @@
+easy_admin:
+    site_name: 'CPanel kveo'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+    list:
+        max_results: 20
+    design:
+        brand_color: '#BF0000'
+    entities:
+        Comment:
+            class: AppBundle\Entity\Comment
+            label: 'easy.comment.label'
+            list:
+                title: 'easy.comment.title'
+                fields:
+                    - 'id'
+                    - { property: 'user', label: 'easy.user'}
+                    - { property: 'media', label: 'easy.media'}
+                    - { property: 'comment', label: 'easy.comment'}
+                    - { property: 'publishedAt', label: 'easy.published'}
+                    - { property: 'editedAt', label: 'easy.edited'}
+        Media:
+            class: AppBundle\Entity\Media
+            label: 'easy.media.label'
+            list:
+                title: 'easy.media.title'
+                fields:
+                    - 'id'
+                    - { property: 'title', label: 'easy.title'}
+                    - { property: 'media_type', label: 'easy.type'}
+                    - { property: 'gender', label: 'easy.gender'}
+                    - { property: 'img', label: 'easy.img', type: 'image',  base_path: '/images/'}
+                    - { property: 'trailer', label: 'easy.trailer'}
+                    - { property: 'season', label: 'easy.season'}
+        User:
+             class: AppBundle\Entity\User
+             label: 'easy.user.label'
+             list:
+                 title: 'easy.user.title'
+                 fields:
+                     - 'id'
+                     - { property: 'username', label: 'easy.user'}
+                     - { property: 'email', label: 'easy.email'}
+                     - { property: 'locked', label: 'easy.locked'}
+                     - { property: 'expired', label: 'easy.expired'}
+                     - { property: 'roles', label: 'easy.roles'}
+        Gender:
+             class: AppBundle\Entity\Gender
+             label: 'easy.gender.label'
+             list:
+                 title: 'easy.gender.title'
+                 fields:
+                     - 'id'
+                     - { property: 'name', label: 'easy.gender'}
+        MediaState:
+             class: AppBundle\Entity\MediaState
+             label: 'easy.media_state.label'
+             list:
+                 title: 'easy.media_state.title'
+                 fields:
+                     - 'id'
+                     - { property: 'name', label: 'easy.state'}
+        MediaType:
+             class: AppBundle\Entity\MediaType
+             label: 'easy.media_type.label'
+             list:
+                 title: 'easy.media_tipe.title'
+                 fields:
+                     - 'id'
+                     - { property: 'name', label: 'easy.type'}
+        Person:
+             class: AppBundle\Entity\Person
+             label: 'easy.person.label'
+             list:
+                 title: 'Actores'
+                 fields:
+                     - 'id'
+                     - { property: 'name', label: 'easy.name'}
+                     - { property: 'age', label: 'easy.age'}
+                     - { property: 'birthplace', label: 'easy.birthplace'}
+        State:
+             class: AppBundle\Entity\State
+             label: 'easy.state.label'
+             list:
+                 title: 'easy.person.title'
+                 fields:
+                     - 'id'
+                     - { property: 'media', label: 'easy.media'}
+                     - { property: 'user', label: 'easy.user'}
+                     - { property: 'mediaState', label: 'easy.state'}
+        Vote:
+             class: AppBundle\Entity\Vote
+             label: 'easy.vote.label'
+             list:
+                 title: 'easy.vote.title'
+                 fields:
+                     - 'id'
+                     - { property: 'media', label: 'easy.media'}
+                     - { property: 'user', label: 'easy.user'}
+                     - { property: 'voteType', label: 'easy.vote'}
+        VoteType:
+             class: AppBundle\Entity\VoteType
+             label: 'easy.vote_type.label'
+             list:
+                 title: 'easy.vote_type.title'
+                 fields:
+                     - 'id'
+                     - { property: 'name', label: 'easy.vote'}

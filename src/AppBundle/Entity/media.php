@@ -396,4 +396,8 @@ class Media
     {
         return $this->persons;
     }
+
+    public function __toString(){
+        return $this->getTitle();
+    }
 }

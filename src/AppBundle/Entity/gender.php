@@ -93,4 +93,8 @@ class Gender
     {
         return $this->slug;
     }
+
+    public function __toString(){
+        return $this->getName();
+    }
 }

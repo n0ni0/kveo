@@ -23,4 +23,13 @@ class User extends BaseUser
         parent::__construct();
     }
 
+    public function getExpiresAt()
+    {
+        return $this->expiresAt;
+    }
+
+    public function getCredentialsExpireAt()
+    {
+        return $this->credentialsExpireAt;
+    }
 }
