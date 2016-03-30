@@ -27,6 +27,9 @@
             <div class="media-year">
                 {{ selected.mediaType.name }} | {{ selected.year }} | {{ selected.gender.name }}
             </div>
+            {% if selected.season %}
+                {{ 'media.season' |trans }} {{ selected.season }}
+            {% endif %}
             <div class="media-plot">
                 {{ selected.plot }}
             </div>

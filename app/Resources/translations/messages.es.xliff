@@ -86,6 +86,10 @@
                 <source>media.comments</source>
                 <target>Comentarios</target>
             </trans-unit>
+            <trans-unit id="media.season">
+                <source>media.season</source>
+                <target>Temporadas:</target>
+            </trans-unit>
 
             <trans-unit id="user.profile">
                 <source>user.profile</source>
@@ -312,7 +316,6 @@
                 <source>easy.state</source>
                   <target>Estado</target>
                </trans-unit>
-
               <trans-unit id="easy.name">
                 <source>easy.name</source>
                   <target>Nombre</target>
