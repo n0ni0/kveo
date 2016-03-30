@@ -19,6 +19,11 @@
                 <target>Enviar</target>
             </trans-unit>
 
+           <trans-unit id="link.back.home">
+                <source>link.back.home</source>
+                <target>Volver a kveo</target>
+            </trans-unit>
+
            <trans-unit id="label.edited">
                 <source>label.edited</source>
                 <target>Editado</target>
@@ -158,6 +163,171 @@
               <trans-unit id="collection.finish">
                 <source>collection.finish</source>
                   <target>Finalizado</target>
+               </trans-unit>
+
+              <trans-unit id="admin.cpanel">
+                <source>admin.cpanel</source>
+                  <target> Administrar</target>
+               </trans-unit>
+
+              <trans-unit id="easy.comment.label">
+                <source>easy.comment.label</source>
+                  <target> Comentarios</target>
+               </trans-unit>
+              <trans-unit id="easy.media.label">
+                <source>easy.media.label</source>
+                  <target>Media</target>
+               </trans-unit>
+              <trans-unit id="easy.user_label">
+                <source>easy.user.label</source>
+                  <target>Usuarios</target>
+               </trans-unit>
+              <trans-unit id="easy.gender.label">
+                <source>easy.gender.label</source>
+                  <target>Géneros</target>
+               </trans-unit>
+              <trans-unit id="easy.media_state.label">
+                <source>easy.media_state.label</source>
+                  <target>Estado de las Medias</target>
+               </trans-unit>
+              <trans-unit id="easy.media_type.label">
+                <source>easy.media_type.label</source>
+                  <target>Tipo de Media</target>
+               </trans-unit>
+              <trans-unit id="easy.person.label">
+                <source>easy.person.label</source>
+                  <target>Actores</target>
+               </trans-unit>
+              <trans-unit id="easy.state.label">
+                <source>easy.state.label</source>
+                  <target>Estado</target>
+               </trans-unit>
+              <trans-unit id="easy.vote.label">
+                <source>easy.vote.label</source>
+                  <target>Votos</target>
+               </trans-unit>
+              <trans-unit id="easy.vote_type.label">
+                <source>easy.vote_type.label</source>
+                  <target>Tipo de votos</target>
+               </trans-unit>
+
+              <trans-unit id="easy.comment.title">
+                <source>easy.comment.title</source>
+                  <target>Comentarios de los usuarios</target>
+               </trans-unit>
+              <trans-unit id="easy.media.title">
+                <source>easy.media.title</source>
+                  <target>Medias</target>
+               </trans-unit>
+              <trans-unit id="easy.user.title">
+                <source>easy.user.title</source>
+                  <target>Listado de Usuarios</target>
+               </trans-unit>
+              <trans-unit id="easy.gender.title">
+                <source>easy.gender.title</source>
+                  <target>Género</target>
+               </trans-unit>
+              <trans-unit id="easy.media_state.title">
+                <source>easy.media_state.title</source>
+                  <target>Estado de las medias</target>
+               </trans-unit>
+              <trans-unit id="easy.media_type.title">
+                <source>easy.media_type.title</source>
+                  <target>Tipo de media</target>
+               </trans-unit>
+              <trans-unit id="easy.person.title">
+                <source>easy.person.title</source>
+                  <target>Estado</target>
+               </trans-unit>
+              <trans-unit id="easy.vote.title">
+                <source>easy.vote.title</source>
+                  <target>Votos</target>
+               </trans-unit>
+               <trans-unit id="easy.vote_type.title">
+                <source>easy.vote_type.title</source>
+                <target>Tipos de votos</target>
+              </trans-unit>
+
+              <trans-unit id="easy.user">
+                <source>easy.user</source>
+                  <target>Usuario</target>
+               </trans-unit>
+              <trans-unit id="easy.media">
+                <source>easy.media</source>
+                  <target>Media</target>
+               </trans-unit>
+              <trans-unit id="easy.comment">
+                <source>easy.comment</source>
+                  <target>Comentario</target>
+               </trans-unit>
+              <trans-unit id="easy.published">
+                <source>easy.published</source>
+                  <target>Publicado</target>
+               </trans-unit>
+              <trans-unit id="easy.edited">
+                <source>easy.edited</source>
+                  <target>Editado</target>
+               </trans-unit>
+              <trans-unit id="easy.type">
+                <source>easy.type</source>
+                  <target>Tipo</target>
+               </trans-unit>
+              <trans-unit id="easy.title">
+                <source>easy.title</source>
+                  <target>Título</target>
+               </trans-unit>
+              <trans-unit id="easy.gender">
+                <source>easy.gender</source>
+                  <target>Género</target>
+               </trans-unit>
+              <trans-unit id="easy.img">
+                <source>easy.img</source>
+                  <target>Imagen</target>
+               </trans-unit>
+              <trans-unit id="easy.trailer">
+                <source>easy.trailer</source>
+                  <target>Trailer</target>
+               </trans-unit>
+              <trans-unit id="easy.season">
+                <source>easy.season</source>
+                  <target>Temporada</target>
+               </trans-unit>
+              <trans-unit id="easy.email">
+                <source>easy.email</source>
+                  <target>Email</target>
+               </trans-unit>
+              <trans-unit id="easy.locked">
+                <source>easy.locked</source>
+                  <target>Bloqueado</target>
+               </trans-unit>
+              <trans-unit id="easy.expired">
+                <source>easy.expired</source>
+                  <target>Expirado</target>
+               </trans-unit>
+              <trans-unit id="easy.roles">
+                <source>easy.roles</source>
+                  <target>Roles</target>
+               </trans-unit>
+              <trans-unit id="easy.state">
+                <source>easy.state</source>
+                  <target>Estado</target>
+               </trans-unit>
+
+              <trans-unit id="easy.name">
+                <source>easy.name</source>
+                  <target>Nombre</target>
+               </trans-unit>
+              <trans-unit id="easy.age">
+                <source>easy.age</source>
+                  <target>Edad</target>
+               </trans-unit>
+              <trans-unit id="easy.birthplace">
+                <source>easy.birthplace</source>
+                  <target>Lugar de nacimiento</target>
+               </trans-unit>
+              <trans-unit id="easy.vote">
+                <source>easy.vote</source>
+                  <target>Voto</target>
                </trans-unit>
         </body>
     </file>
