@@ -247,6 +247,8 @@ ul li {
 
 .fos-reset {
     margin-top: 5%;
+    background-color: #9f9fa3;
+    padding-bottom: 15px;
 }
 
 .search-bar {
