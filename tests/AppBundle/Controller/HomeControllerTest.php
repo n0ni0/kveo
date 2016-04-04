@@ -6,13 +6,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
-    public function testIndex()
+    private $client;
+
+    protected function setUp()
     {
-        $client = static::createClient();
+        $this->client = static::createClient(array(), array(
+            'PHP_AUTH_USER' => 'username',
+            'PHP_AUTH_PW'   => 'username',
+        ));
+    }
 
-        $crawler = $client->request('GET', '/');
+    public function testThatLoadHomePage()
+    {
+        $crawler = $this->client->request('GET', '/');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertEquals(1, $crawler->filter('div#carousel')->count());
     }
 }
