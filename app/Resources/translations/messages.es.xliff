@@ -210,10 +210,6 @@
                 <source>easy.vote.label</source>
                   <target>Votos</target>
                </trans-unit>
-              <trans-unit id="easy.vote_type.label">
-                <source>easy.vote_type.label</source>
-                  <target>Tipo de votos</target>
-               </trans-unit>
 
               <trans-unit id="easy.comment.title">
                 <source>easy.comment.title</source>

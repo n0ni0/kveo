@@ -16,7 +16,7 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
         $dql = 'SELECT m.title, m.slug, m.img
                   FROM AppBundle:Vote v
                   JOIN v.media m
-                 WHERE v.voteType < 4';
+                 WHERE v.rating < 4';
 
         $query = $em->createQuery($dql);
         $query->execute();
