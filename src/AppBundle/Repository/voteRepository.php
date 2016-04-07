@@ -22,4 +22,19 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
         $query->execute();
         return $query->getResult();
     }
+
+    public function findVoteIfExist($id, $user)
+    {
+        $em = $this->getEntityManager();
+        $dql = 'SELECT v
+                  FROM AppBundle:Vote v
+                 WHERE v.media = :media
+                   AND v.user = :user';
+
+        $query = $em->createQuery($dql);
+        $query->setParameter('media', $id);
+        $query->setParameter('user', $user);
+
+        return $query->getOneOrNullResult();
+    }
 }

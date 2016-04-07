@@ -18,6 +18,10 @@
                 <source>btn.send</source>
                 <target>Enviar</target>
             </trans-unit>
+            <trans-unit id="btn.valoration">
+                <source>btn.valoration</source>
+                <target>Valoración</target>
+            </trans-unit>
 
            <trans-unit id="link.back.home">
                 <source>link.back.home</source>
