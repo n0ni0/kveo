@@ -99,12 +99,4 @@ easy_admin:
                      - 'id'
                      - { property: 'media', label: 'easy.media'}
                      - { property: 'user', label: 'easy.user'}
-                     - { property: 'voteType', label: 'easy.vote'}
-        VoteType:
-             class: AppBundle\Entity\VoteType
-             label: 'easy.vote_type.label'
-             list:
-                 title: 'easy.vote_type.title'
-                 fields:
-                     - 'id'
-                     - { property: 'name', label: 'easy.vote'}
+                     - { property: 'rating', label: 'easy.vote'}

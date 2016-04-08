@@ -34,10 +34,10 @@ class Vote
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\VoteType")
-     * @ORM\JoinColumn(name="voteType_id", referencedColumnName="id", onDelete="CASCADE")
+     * @var int
+     * @ORM\Column(name="rating", type="integer")
      */
-    private $voteType;
+    private $rating;
 
     /**
      * Get id
@@ -98,26 +98,27 @@ class Vote
     }
 
     /**
-     * Set voteType
+     * Set rating
      *
-     * @param \AppBundle\Entity\voteType $voteType
+     * @param string $rating
      *
      * @return vote
      */
-    public function setVoteType(\AppBundle\Entity\voteType $voteType = null)
+    public function setRating($rating)
     {
-        $this->voteType = $voteType;
+        $this->rating = $rating;
 
         return $this;
     }
 
     /**
-     * Get voteType
+     * Get rating
      *
-     * @return \AppBundle\Entity\voteType
+     * @return string
      */
-    public function getVoteType()
+    public function getRating()
     {
-        return $this->voteType;
+        return $this->rating;
     }
+    
 }

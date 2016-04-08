@@ -1,0 +1,5 @@
+<form method="POST" id="new-vote-button" action="{{path('new_vote', {'media': media.id})}}">
+    {{ form_row(form.rating) }}
+    {{form_rest(form)}}
+    <button type="submit" id="new-submit-button" class="btn btn-xs btn-danger">{{ 'btn.valoration' |trans }}</button>
+</form>

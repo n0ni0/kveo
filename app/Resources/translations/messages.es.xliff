@@ -18,6 +18,10 @@
                 <source>btn.send</source>
                 <target>Enviar</target>
             </trans-unit>
+            <trans-unit id="btn.valoration">
+                <source>btn.valoration</source>
+                <target>Valoración</target>
+            </trans-unit>
 
            <trans-unit id="link.back.home">
                 <source>link.back.home</source>
@@ -209,10 +213,6 @@
               <trans-unit id="easy.vote.label">
                 <source>easy.vote.label</source>
                   <target>Votos</target>
-               </trans-unit>
-              <trans-unit id="easy.vote_type.label">
-                <source>easy.vote_type.label</source>
-                  <target>Tipo de votos</target>
                </trans-unit>
 
               <trans-unit id="easy.comment.title">

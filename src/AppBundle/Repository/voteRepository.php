@@ -16,10 +16,25 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
         $dql = 'SELECT m.title, m.slug, m.img
                   FROM AppBundle:Vote v
                   JOIN v.media m
-                 WHERE v.voteType < 4';
+                 WHERE v.rating < 4';
 
         $query = $em->createQuery($dql);
         $query->execute();
         return $query->getResult();
+    }
+
+    public function findVoteIfExist($id, $user)
+    {
+        $em = $this->getEntityManager();
+        $dql = 'SELECT v
+                  FROM AppBundle:Vote v
+                 WHERE v.media = :media
+                   AND v.user = :user';
+
+        $query = $em->createQuery($dql);
+        $query->setParameter('media', $id);
+        $query->setParameter('user', $user);
+
+        return $query->getOneOrNullResult();
     }
 }

@@ -13,7 +13,9 @@ class MediaController extends Controller
     public function showMediaAction($slug)
     {
         $selected = $this->getDoctrine()->getRepository('AppBundle:Media')->findOneBySlug($slug);
-        $id = $selected->getId();
+        $id       = $selected->getId();
+        $user     = $this->getUser()->getId();
+        $vote     = $this->getDoctrine()->getRepository('AppBundle:Vote')->findVoteIfExist($id, $user);
 
         $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->findByMedia(
             array('id'          => $id),
@@ -23,6 +25,7 @@ class MediaController extends Controller
         return $this->render('media/media.html.twig', array(
             'selected' => $selected,
             'comment'  => $comments,
+            'vote'     => $vote
         ));
     }
 }

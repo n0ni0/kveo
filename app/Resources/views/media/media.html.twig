@@ -7,10 +7,12 @@
         <div class="media-image col-sm-2">
             <img id="ximage"  src="{{ asset('/images/' ~ selected.img) | imagine_filter('media') }}">
             <div id="media-actions">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">First item</a>
-                    <a href="#" class="list-group-item">Second item</a>
-                    <a href="#" class="list-group-item">Third item</a>
+                <div class="vote-media">
+                    {% if vote is null %}
+                        {{ render(controller('AppBundle:Vote:newVote',{'media': selected.id})) }}
+                    {% else %}
+                        {{ render(controller('AppBundle:Vote:editVote',{'media': selected.id, 'vote': vote.id})) }}
+                    {% endif %}
                 </div>
             </div>
             <div class="media-links">
