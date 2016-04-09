@@ -10,7 +10,7 @@
             <div class="media-container">
                 <div class="media-card">
                     <a href="{{ path("media", {'slug':media.slug}) }}">
-                        <img src="{{ asset('/images/' ~ media.img) | imagine_filter('media') }}">
+                        <img src="{{ asset('/images/' ~ media.image) | imagine_filter('media') }}">
                     </a>
                 </div>
                 <div class="media-info">

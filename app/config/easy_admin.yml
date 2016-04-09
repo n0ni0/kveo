@@ -43,6 +43,7 @@ easy_admin:
                     - { property: 'gender', label: 'easy.gender'}
                     - { property: 'trailer', label: 'easy.trailer'}
                     - { property: 'season', label: 'easy.season'}
+                    - { property: 'persons', label: 'easy.person.label' }
         User:
              class: AppBundle\Entity\User
              label: 'easy.user.label'

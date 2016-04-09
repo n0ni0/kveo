@@ -13,7 +13,7 @@ class StateRepository extends \Doctrine\ORM\EntityRepository
     public function findCollection($user)
     {
         $conn = $this->getEntityManager()->getConnection();
-        $sql  = 'SELECT s.mediaState_id, m.title, m.slug, m.img
+        $sql  = 'SELECT s.mediaState_id, m.title, m.slug, m.image
                    FROM state as s
              INNER JOIN media AS m ON (m.id = s.media_id)
                   WHERE s.user_id = :user
