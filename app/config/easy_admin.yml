@@ -29,9 +29,18 @@ easy_admin:
                 fields:
                     - 'id'
                     - { property: 'title', label: 'easy.title'}
-                    - { property: 'media_type', label: 'easy.type'}
+                    - { property: 'mediaType', label: 'easy.type'}
                     - { property: 'gender', label: 'easy.gender'}
-                    - { property: 'img', label: 'easy.img', type: 'image',  base_path: '/images/'}
+                    - { property: 'image', type: 'image', base_path: %app.path.media_images% }
+                    - { property: 'trailer', label: 'easy.trailer'}
+                    - { property: 'season', label: 'easy.season'}
+            form:
+                fields:
+                    - 'id'
+                    - { property: 'title', label: 'easy.title'}
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'mediaType', label: 'easy.type'}
+                    - { property: 'gender', label: 'easy.gender'}
                     - { property: 'trailer', label: 'easy.trailer'}
                     - { property: 'season', label: 'easy.season'}
         User:

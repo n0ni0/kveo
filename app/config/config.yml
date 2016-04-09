@@ -7,11 +7,13 @@ imports:
     - { resource: knp_paginator.yml }
     - { resource: ornicar_gravatar.yml }
     - { resource: easy_admin.yml }
+    - { resource: vich_uploader.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: es
+    app.path.media_images: /images
 
 framework:
     #esi:             ~

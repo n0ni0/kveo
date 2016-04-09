@@ -2,16 +2,19 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Media
  *
  * @ORM\Table(name="media")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MediaRepository")
+ * @Vich\Uploadable
  */
 class Media
 {
@@ -74,9 +77,15 @@ class Media
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255)
      */
-    private $img;
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="media_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @var string
@@ -234,27 +243,27 @@ class Media
     }
 
     /**
-     * Set img
+     * Set image
      *
-     * @param string $img
+     * @param string $image
      *
      * @return media
      */
-    public function setImg($img)
+    public function setImage($image)
     {
-        $this->img = $img;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get img
+     * Get image
      *
      * @return string
      */
-    public function getImg()
+    public function getImage()
     {
-        return $this->img;
+        return $this->image;
     }
 
     /**
@@ -395,6 +404,24 @@ class Media
     public function getPersons()
     {
         return $this->persons;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
     public function __toString(){
