@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Media;
+
 /**
  * voteRepository
  *
@@ -13,12 +15,13 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
     public function findMediaTrends()
     {
         $em  = $this->getEntityManager();
-        $dql = 'SELECT m.title, m.slug, m.image
-                  FROM AppBundle:Vote v
-                  JOIN v.media m
-                 WHERE v.rating < 4';
+        $dql = 'SELECT DISTINCT m.title, m.slug, m.image
+                           FROM AppBundle:Vote v
+                           JOIN v.media m
+                          WHERE v.rating > 2';
 
         $query = $em->createQuery($dql);
+        $query->setMaxResults(Media::NUM_ITEMS);
         $query->execute();
         return $query->getResult();
     }
