@@ -49,7 +49,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
                 Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
                 Nam eget dui. Etiam rhoncus.'
             );
-            $media->setImg('kveo-walkingDead.jpg');
+            $media->setImage('kveo-walkingDead.jpg');
             $media->setTrailer('https://www.youtube.com/watch?v=R1v0uFms68U');
             $manager->persist($media);
 

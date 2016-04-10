@@ -13,7 +13,7 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
     public function findMediaTrends()
     {
         $em  = $this->getEntityManager();
-        $dql = 'SELECT m.title, m.slug, m.img
+        $dql = 'SELECT m.title, m.slug, m.image
                   FROM AppBundle:Vote v
                   JOIN v.media m
                  WHERE v.rating < 4';

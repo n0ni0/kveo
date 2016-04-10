@@ -5,7 +5,7 @@
 {% block body %}
     <div class="media-options">
         <div class="media-image col-sm-2">
-            <img id="ximage"  src="{{ asset('/images/' ~ selected.img) | imagine_filter('media') }}">
+            <img id="ximage"  src="{{ asset('/images/' ~ selected.image) | imagine_filter('media') }}">
             <div id="media-actions">
                 <div class="vote-media">
                     {% if vote is null %}
