@@ -332,6 +332,11 @@
                 <source>easy.vote</source>
                   <target>Voto</target>
                </trans-unit>
+
+              <trans-unit id="footer.created_by">
+                <source>footer.created_by</source>
+                  <target>Creado por Antonio Jiménez Velázquez</target>
+               </trans-unit>
         </body>
     </file>
 </xliff>

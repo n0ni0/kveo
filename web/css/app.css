@@ -90,8 +90,13 @@ ul li {
 #footer {
     background: #414141;
     color: #e3dee2;
-    height: 35px;
+    height: auto;
     width: 100%;
+    padding: 15px 0 15px 0;
+}
+
+.footer-links > a {
+    color: #b7b7bc;
 }
 
 /*  media-cards */
