@@ -15,3 +15,9 @@ services:
         public: false
         tags:
             - { name: security.voter }
+
+    kveo_mailer:
+        class: AppBundle\Utils\Mailer
+        arguments:
+            - "@mailer"
+            - "@templating"

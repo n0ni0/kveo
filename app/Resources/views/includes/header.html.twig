@@ -1,61 +1,65 @@
 <header id="header">
-    <div id="headerLogo" class="container">
-        <a href="{{ path('home') }}"><i class="logo fa fa-television fa-4x pull-left">kveo</i></a>
-
-        <div class="search-bar col-sm-3">
-            <form action="{{ path('media_search') }}" method="get">
-                <div class="input-group-sm">
-                    <input name="q" type="text" class="form-control" placeholder="{{ 'media.search_for'|trans }}" autocomplete="off">
+    <div class="header-content navbar navbar-default navbar-fixed-top">
+        <div id="headerLogo" class="container">
+            <div class="visible-md visible-lg visible-sm">
+                <a href="{{ path('home') }}"><i class="logo fa fa-television fa-4x pull-left">kveo</i></a>
+            </div>
+            <div class="search-bar col-md-3 col-xs-7">
+                <form action="{{ path('media_search') }}" method="get">
+                    <div class="input-group-sm">
+                        <input name="q" type="text" class="form-control" placeholder="{{ 'media.search_for'|trans }}" autocomplete="off">
+                    </div>
+                </form>
+            </div>
+            <div class="user-profile pull-right">
+                <div class="dropdown">
+                    <button class="btn btn-xs btn-danger dropdown-toggle" type="button"
+                            id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="avatar" src="{{ gravatar(app.user.email, 35) }}" /></i> {{ app.user.username }}
+                    </button>
+                    <ul class="c dropdown-menu pull-right" aria-labelledby="dropdownMenu2">
+                        {% if is_granted("ROLE_SUPER_ADMIN") %}
+                            <li><a href="{{ path('easyadmin') }}"><i class="fa fa-suitcase"></i>{{ 'admin.cpanel'|trans }}</a></li>
+                        {% endif %}
+                        <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-cog fa-spin"></i>{{ 'user.profile'|trans }}</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"> <i class="fa fa-sign-out"></i>{{ 'user.logout'|trans }}</a></li>
+                    </ul>
                 </div>
-            </form>
-        </div>
-        <div class="user-profile pull-right">
-            <div class="dropdown">
-                <button class="btn btn-danger dropdown-toggle" type="button"
-                        id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="avatar" src="{{ gravatar(app.user.email, 35) }}" /></i> {{ app.user.username }}
-                </button>
-                <ul class="c dropdown-menu" aria-labelledby="dropdownMenu2">
-                    {% if is_granted("ROLE_SUPER_ADMIN") %}
-                        <li><a href="{{ path('easyadmin') }}"><i class="fa fa-suitcase"></i>{{ 'admin.cpanel'|trans }}</a></li>
-                    {% endif %}
-                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-cog fa-spin"></i>{{ 'user.profile'|trans }}</a></li>
-                    <li><a href="{{ path('fos_user_security_logout') }}"> <i class="fa fa-sign-out"></i>{{ 'user.logout'|trans }}</a></li>
-                </ul>
             </div>
         </div>
+        <nav class="productMenu navbar navbar-default no-margin" >
+            <div class="nav-product navbar-header fixed-brand">
+                <a href="{{ path('home') }}"><i class="logo visible-xs fa fa-television fa-4x pull-left">kveo</i></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".sub">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="sub collapse navbar-collapse col-md-11">
+                <ul class="nav navbar-nav">
+                    <li class="mainNav tab-movies col-md-2 ">
+                        <a href="{{ path('catalog', { 'mediaType':2 }) }}">{{ 'menu.movies'|trans }}</a>
+                    </li>
+                    <li class="mainNav tab-movies col-md-2 ">
+                        <a href="{{ path('catalog', { 'mediaType':3 }) }}">{{ 'menu.series'|trans }}</a>
+                    </li>
+                    <li class="mainNav tab-movies col-md-2 ">
+                        <a href="{{ path('catalog', { 'mediaType':1 }) }}">{{ 'menu.documentaries'|trans }}</a>
+                    </li>
+                    <li class="mainNav tab-movies col-md-2 ">
+                        <a href="{{ path('catalog', { 'mediaType':4 }) }}">{{ 'menu.programs'|trans }}</a>
+                    </li>
+                    <li class="mainNav tab-movies col-md-2 ">
+                        <a href="{{ path('home') }}">{{ 'menu.tendencies'|trans }}</a>
+                    </li>
+                    <li class="mainNav tab-movies col-md-2">
+                        <a href="{{ path('collection_show', { 'slug': app.user.usernameCanonical }) }}">{{ 'menu.collection'|trans }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <nav class="productMenu navbar navbar-default no-margin" >
-        <div class="navbar-header fixed-brand">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target=".sub">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="sub collapse navbar-collapse col-md-11">
-            <ul class="nav navbar-nav">
-                <li class="mainNav tab-movies col-md-2 ">
-                    <a href="{{ path('catalog', { 'mediaType':2 }) }}">{{ 'menu.movies'|trans }}</a>
-                </li>
-                <li class="mainNav tab-movies col-md-2 ">
-                    <a href="{{ path('catalog', { 'mediaType':3 }) }}">{{ 'menu.series'|trans }}</a>
-                </li>
-                <li class="mainNav tab-movies col-md-2 ">
-                    <a href="{{ path('catalog', { 'mediaType':1 }) }}">{{ 'menu.documentaries'|trans }}</a>
-                </li>
-                <li class="mainNav tab-movies col-md-2 ">
-                    <a href="{{ path('catalog', { 'mediaType':4 }) }}">{{ 'menu.programs'|trans }}</a>
-                </li>
-                <li class="mainNav tab-movies col-md-2 ">
-                    <a href="{{ path('home') }}">{{ 'menu.tendencies'|trans }}</a>
-                </li>
-                <li class="mainNav tab-movies col-md-2">
-                    <a href="{{ path('collection_show', { 'slug': app.user.usernameCanonical }) }}">{{ 'menu.collection'|trans }}</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 </header>
