@@ -22,6 +22,10 @@
                 <source>btn.valoration</source>
                 <target>Valoración</target>
             </trans-unit>
+              <trans-unit id="btn.contact.submit">
+                <source>btn.contact.submit</source>
+                  <target>Enviar formulario de contacto</target>
+               </trans-unit>
 
            <trans-unit id="link.back.home">
                 <source>link.back.home</source>
@@ -336,6 +340,24 @@
               <trans-unit id="footer.created_by">
                 <source>footer.created_by</source>
                   <target>Creado por Antonio Jiménez Velázquez</target>
+               </trans-unit>
+
+              <trans-unit id="contact.form.title">
+                <source>contact.form.title</source>
+                  <target>Formulario de contacto</target>
+               </trans-unit>
+              <trans-unit id="contact">
+                <source>contact</source>
+                  <target>Contacto</target>
+               </trans-unit>
+              <trans-unit id="message">
+                <source>message</source>
+                  <target>Mensaje</target>
+               </trans-unit>
+
+              <trans-unit id="flash.contact">
+                <source>flash.contact</source>
+                  <target>Su mensaje se ha enviado correctamente, le responderemos lo antes posible</target>
                </trans-unit>
         </body>
     </file>
