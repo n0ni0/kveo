@@ -173,6 +173,7 @@ ul li {
     max-width:100%;
     margin: 10px auto 10px;
     display: table;
+    padding-top: 10px;
 }
 
 /* media comments */
