@@ -346,3 +346,16 @@ ul li {
 .status {
     margin-right: 15px;
 }
+
+/* error */
+
+.error{
+    background-color: #b7b7bc;
+    text-align: center;
+}
+
+.logo-error {
+    padding-top: 15px;
+    margin-left: 30px;
+    text-align: left;
+}
