@@ -25,7 +25,7 @@ ul li {
 .wrap{
     flex: 1;
     padding-bottom: 10px;
-    background-image: url("/images/background-image.jpg");
+    background-image: url("/images/fixtures/background-image.jpg");
     padding-top: 120px;
 }
 
