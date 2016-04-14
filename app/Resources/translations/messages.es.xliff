@@ -359,6 +359,15 @@
                 <source>flash.contact</source>
                   <target>Su mensaje se ha enviado correctamente, le responderemos lo antes posible</target>
                </trans-unit>
+
+               <trans-unit id="error.generic">
+                <source>error.generic</source>
+                 <target>Se ha producido un error</target>
+               </trans-unit>
+               <trans-unit id="error.back_home">
+                <source>error.back_home</source>
+                 <target>Volver a la portada</target>
+               </trans-unit>
         </body>
     </file>
 </xliff>
