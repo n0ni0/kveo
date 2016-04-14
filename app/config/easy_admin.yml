@@ -31,14 +31,16 @@ easy_admin:
                     - { property: 'title', label: 'easy.title'}
                     - { property: 'mediaType', label: 'easy.type'}
                     - { property: 'gender', label: 'easy.gender'}
-                    - { property: 'image', type: 'image', base_path: %app.path.media_images% }
+                    - { property: 'image', type: 'image',  label: 'easy.image', base_path: %app.path.media_images% }
                     - { property: 'trailer', label: 'easy.trailer'}
                     - { property: 'season', label: 'easy.season'}
             form:
                 fields:
-                    - 'id'
                     - { property: 'title', label: 'easy.title'}
-                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'slug'}
+                    - { property: 'imageFile', type: 'vich_image', label: 'easy.image' }
+                    - { property: 'year', label: 'easy.year'}
+                    - { property: 'plot', label: 'easy.plot'}
                     - { property: 'mediaType', label: 'easy.type'}
                     - { property: 'gender', label: 'easy.gender'}
                     - { property: 'trailer', label: 'easy.trailer'}

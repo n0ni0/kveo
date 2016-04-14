@@ -336,6 +336,18 @@
                 <source>easy.vote</source>
                   <target>Voto</target>
                </trans-unit>
+              <trans-unit id="easy.year">
+                <source>easy.year</source>
+                  <target>Año</target>
+               </trans-unit>
+              <trans-unit id="easy.plot">
+                <source>easy.plot</source>
+                  <target>Trama</target>
+               </trans-unit>
+              <trans-unit id="easy.image">
+                <source>easy.image</source>
+                  <target>Imagen</target>
+               </trans-unit>
 
               <trans-unit id="footer.created_by">
                 <source>footer.created_by</source>
