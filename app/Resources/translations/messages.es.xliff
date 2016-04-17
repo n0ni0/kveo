@@ -367,6 +367,11 @@
                   <target>Mensaje</target>
                </trans-unit>
 
+              <trans-unit id="contact.message">
+                <source>contact.message</source>
+                  <target>Introduzca su mensaje</target>
+               </trans-unit>
+
               <trans-unit id="flash.contact">
                 <source>flash.contact</source>
                   <target>Su mensaje se ha enviado correctamente, le responderemos lo antes posible</target>

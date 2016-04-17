@@ -17,17 +17,17 @@ class Mailer
         $this->templating = $templating;
     }
 
-    public function sendMail($data)
+    public function sendMail($data, $user)
     {
         $message = \Swift_Message::newInstance()
             ->setContentType('text/html')
             ->setSubject('Formulario de contacto')
             ->setFrom(array('mecaigotolosdias@gmail.com' => 'noreply@kveo.local'))
-            ->setTo($data['email'])
+            ->setTo($user->getEmail())
             ->setBcc('ajimenez.bf@gmail.com')
             ->setBody($this->templating->render('contact/mailTemplate.html.twig',
-                array('name'    => $data['name'],
-                      'email'   => $data['email'],
+                array('name'    => $user->getUsername(),
+                      'email'   => $user->getEmail(),
                       'message' => $data['message']
                 )));
 

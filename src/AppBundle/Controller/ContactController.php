@@ -15,12 +15,14 @@ class ContactController extends Controller
      */
     public function showContactAction(Request $request)
     {
+        $user = $this->getUser();
+
         $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
 
         if($form->isValid() && $form->isSubmitted()){
             $data = $form->getData();
-            $this->get('kveo_mailer')->sendMail($data);
+            $this->get('kveo_mailer')->sendMail($data, $user);
 
             $request->getSession()->getFlashBag()->add(
                 'notice',
