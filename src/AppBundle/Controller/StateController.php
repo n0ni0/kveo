@@ -6,7 +6,6 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Media;
 use AppBundle\Entity\State;
 use AppBundle\Form\StateFormType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,10 +60,32 @@ class StateController extends  Controller
             ));
         }
 
-        return $this->render('state/newState.html.twig', array(
-            'media' => $media,
-            'state' => $state,
-            'form'  => $form->createView()
+        return $this->render('state/editState.html.twig', array(
+            'media'       => $media,
+            'state'       => $state,
+            'form'        => $form->createView(),
         ));
     }
+
+    /**
+     * @Route("/media/{media}/state/delete/", name="state_delete")
+     */
+    public function deleteAction(Media $media)
+    {
+        $user  = $this->getUser()->getId();
+        $state = $this->getDoctrine()->getRepository('AppBundle:State')->findStateByMedia($media, $user);
+
+        if(!$state){
+            throw $this->createNotFoundException('Found media with no state to delete');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($state);
+        $em->flush();
+
+        return $this->redirectToRoute('media', array(
+            'slug' => $media->getSlug()
+        ));
+    }
+
 }

@@ -30,7 +30,10 @@
                 <source>btn.add_state</source>
                   <target>Añadir estado</target>
                </trans-unit>
-
+              <trans-unit id="btn.delete_state">
+                <source>btn.delete_state</source>
+                  <target>Borrar estado</target>
+               </trans-unit>
 
            <trans-unit id="link.back.home">
                 <source>link.back.home</source>
