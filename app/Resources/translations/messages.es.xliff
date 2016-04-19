@@ -398,6 +398,12 @@
                 <source>error.back_home</source>
                  <target>Volver a la portada</target>
                </trans-unit>
+
+               <trans-unit id="media.no_medias_found">
+                <source>media.no_medias_found</source>
+                 <target>No se han encontrado coincidencias</target>
+               </trans-unit>
+
         </body>
     </file>
 </xliff>
