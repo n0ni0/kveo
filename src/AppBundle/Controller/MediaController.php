@@ -16,6 +16,7 @@ class MediaController extends Controller
         $id       = $selected->getId();
         $user     = $this->getUser()->getId();
         $vote     = $this->getDoctrine()->getRepository('AppBundle:Vote')->findVoteIfExist($id, $user);
+        $state    = $this->getDoctrine()->getRepository('AppBundle:State')->findStateByMedia($id, $user);
 
         $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->findByMedia(
             array('id'          => $id),
@@ -25,7 +26,8 @@ class MediaController extends Controller
         return $this->render('media/media.html.twig', array(
             'selected' => $selected,
             'comment'  => $comments,
-            'vote'     => $vote
+            'vote'     => $vote,
+            'state'    => $state
         ));
     }
 }

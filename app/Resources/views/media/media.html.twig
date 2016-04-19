@@ -14,6 +14,30 @@
                         {{ render(controller('AppBundle:Vote:editVote',{'media': selected.id, 'vote': vote.id})) }}
                     {% endif %}
                 </div>
+                <hr>
+                <div class="media-state">
+                    {% if state is null %}
+                        <a href="{{ path('new_state', { 'media': selected.id }) }}">
+                            <button type="button" class="btn btn-danger btn-lg">
+                                <li class="fa fa-pencil"></li>
+                                {{ 'btn.add_state' |trans }}
+                            </button>
+                        </a>
+                    {% else %}
+                        <a href="{{ path('home') }}">
+                            <button type="button" class="btn btn-danger btn-lg">
+                                {% if state.mediaState == 'Pendiente' %}
+                                    <li class="fa fa-clock-o"></li>
+                                {% elseif state.mediaState == 'Siguiendo' %}
+                                    <li class="fa fa-eye"></li>
+                                {% elseif state.mediaState == 'Finalizada' %}
+                                    <li class="fa fa-check"></li>
+                                {% endif %}
+                                {{ state.mediaState }}
+                            </button>
+                        </a>
+                    {% endif %}
+                </div>
             </div>
             <div class="media-links">
                 <hr>
