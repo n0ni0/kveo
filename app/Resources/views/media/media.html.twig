@@ -24,7 +24,7 @@
                             </button>
                         </a>
                     {% else %}
-                        <a href="{{ path('home') }}">
+                        <a href="{{ path('edit_state', { 'media': selected.id, 'state': state.id }) }}">
                             <button type="button" class="btn btn-danger btn-lg">
                                 {% if state.mediaState == 'Pendiente' %}
                                     <li class="fa fa-clock-o"></li>

@@ -41,4 +41,30 @@ class StateController extends  Controller
             'form'  => $form->createView()
         ));
     }
+
+    /**
+     * @Route("/media/{media}/state/{state}/edit", name="edit_state")
+     */
+    public function EditStateAction(Request $request, Media $media, State $state)
+    {
+        $form = $this->createForm(StateFormType::class, $state);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($state);
+            $em->flush();
+
+            return $this->redirectToRoute('media', array(
+                'slug' => $media->getSlug()
+            ));
+        }
+
+        return $this->render('state/newState.html.twig', array(
+            'media' => $media,
+            'state' => $state,
+            'form'  => $form->createView()
+        ));
+    }
 }
