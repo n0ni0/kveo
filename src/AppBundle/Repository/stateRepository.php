@@ -24,4 +24,19 @@ class StateRepository extends \Doctrine\ORM\EntityRepository
         $stmt->execute();
         return $stmt;
     }
+
+    public function findStateByMedia($id, $user)
+    {
+        $em  = $this->getEntityManager();
+        $dql = 'SELECT s
+                  FROM AppBundle:State s
+                 WHERE s.media = :id
+                   AND s.user = :user';
+
+        $query = $em->createQuery($dql);
+        $query->setParameter('id', $id);
+        $query->setParameter('user', $user);
+
+        return $query->getOneOrNullResult();
+    }
 }
