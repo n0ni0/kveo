@@ -65,7 +65,7 @@
                 </div>
                 <div class="container-fluid">
                     {% for selected in selected.persons %}
-                        <div class="container col-md-2">
+                        <div class="container col-xs-4">
                             <i class="fa fa-user fa-2x"></i><br>
                             <a href="{{ path('person_show', { 'slug':selected.slug} )  }}">{{ selected.name }}</a>
                         </div>
