@@ -20,13 +20,13 @@ matrix:
 
 before_install:
   - composer self-update
+
+install:
+  - composer install
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - php bin/console doctrine:database:create --env=test
   - php bin/console doctrine:schema:create --env=test
   - php bin/console doctrine:fixtures:load -n --env=test
-
-install:
-  - composer install
 
 script:
   - phpunit -c app
