@@ -16,11 +16,13 @@ matrix:
   allow_failures:
     - php: hhvm
 
-install:
+before-install:
   - composer self-update
 
-before-script:
+install:
   - composer install
+
+before-script:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - php bin/console doctrine:database:create --env=test
   - php bin/console doctrine:schema:create --env=test
