@@ -1,20 +1,20 @@
 **kveo**
 ====
 
-This applications is created with the PHP Framework Symfony 3.
+This applications is created with the PHP Framework Symfony 3.  
 kveo simulates a social network where users can rate and comments movies, series, documentaries, tv programms, etc..
 
 kveo use this bundles:
 -----------------------
-```
-[FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) -- User management
-[KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) -- Paginate results
-[LiipImagineBundle](https://github.com/liip/LiipImagineBundle) -- Image manipulation
-[GravatarBundle](https://github.com/henrikbjorn/GravatarBundle) -- Wrapper to gravatar API
-[EasyAdminBundle](https://github.com/javiereguiluz/EasyAdminBundle) -- Admin generator
-[VichUploaderBundle](https://github.com/dustin10/VichUploaderBundle) -- Ease file uploads attached to entities (Required to easyadmin upload files)
+
+[FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) -- User management  
+[KnpPaginatorBundle](https://github.com/KnpLabs/KnpPaginatorBundle) -- Paginate results  
+[LiipImagineBundle](https://github.com/liip/LiipImagineBundle) -- Image manipulation  
+[GravatarBundle](https://github.com/henrikbjorn/GravatarBundle) -- Wrapper to gravatar API  
+[EasyAdminBundle](https://github.com/javiereguiluz/EasyAdminBundle) -- Admin generator  
+[VichUploaderBundle](https://github.com/dustin10/VichUploaderBundle) -- Ease file uploads attached to entities (Required to easyadmin upload files)  
 [StarRatingBundle](https://github.com/blackknight467/StarRatingBundle/blob/master/composer.json) -- Star rating
-```
+
 
 
 
@@ -64,15 +64,9 @@ http://127.0.0.1:8000
 >
 
 
-```
-http://127.0.0.1:8000
-```
+**Users created in fixtures**  
+   name: `username`  
+   pass: `username`  
 
-
-
-**Users created in fixtures**
-   name: `username`
-   pass: `username`
-
-   name: `admin`
-   pass: `admin`
+   name: `admin`  
+   pass: `admin`  
