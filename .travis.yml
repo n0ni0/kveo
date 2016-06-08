@@ -27,8 +27,6 @@ before-install:
 
 install:
   - composer install
-
-before-script:
   - mysql -u root -e 'CREATE DATABASE kveo;'
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php bin/console doctrine:schema:create --env=test
