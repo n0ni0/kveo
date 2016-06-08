@@ -1,6 +1,8 @@
 **kveo**
 ====
 
+[![Build Status](https://travis-ci.org/n0ni0/kveo.svg?branch=dev)](https://travis-ci.org/n0ni0/kveo)  
+
 This applications is created with the PHP Framework Symfony 3.  
 kveo simulates a social network where users can rate and comments movies, series, documentaries, tv programms, etc..
 
