@@ -33,8 +33,8 @@ class SecurityTest extends WebTestCase
     public function testAdminCanAccessToTheBackend()
     {
         $client = static::createClient(array(), array(
-            'PHP_AUTH_USER' => 'nonio',
-            'PHP_AUTH_PW'   => 'nonio',
+            'PHP_AUTH_USER' => 'admin',
+            'PHP_AUTH_PW'   => 'admin',
         ));
 
         $client->request('GET', '/boss/?action=list&entity=Comment');
