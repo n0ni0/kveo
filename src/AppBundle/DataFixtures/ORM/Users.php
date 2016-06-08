@@ -41,14 +41,5 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $user->setRoles(array('ROLE_ADMIN'));
 
         $userManager->updateUser($user, true);
-
-        $user = $userManager->createUser();
-        $user->setUsername('admin');
-        $user->setEmail('admin@kveo.local');
-        $user->setPlainPassword('admin');
-        $user->setEnabled('true');
-        $user->setRoles(array('ROLE_SUPER_ADMIN'));
-
-        $userManager->updateUser($user, true);
     }
 }
