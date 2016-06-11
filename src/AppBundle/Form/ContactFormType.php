@@ -21,4 +21,9 @@ class ContactFormType extends AbstractType
                     'placeholder' => 'contact.message',
                 )));
     }
+
+    public function getBlockPrefix()
+    {
+        return 'app_contact';
+    }
 }
