@@ -41,4 +41,4 @@ after_script:
   - php vendor/bin/coveralls -v
 
 notifications:
-  slack: nonio:Qw2vMbsIGDOVdWScx3hazBzAs
+  slack: nonio:Qw2vMbsIGDOVdWScx3hazBzA
