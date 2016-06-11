@@ -26,6 +26,7 @@ before-install:
   - composer self-update
 
 install:
+  - composer require satooshi/php-coveralls:~0.6@stable
   - composer install
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php bin/console doctrine:database:create --env=test
@@ -33,7 +34,11 @@ install:
   - php bin/console doctrine:fixtures:load -n --env=test
 
 script:
-  - phpunit
+  - mkdir -p build/logs
+  - phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - php vendor/bin/coveralls -v
 
 notifications:
-  email: ajimenez.bf@gmail.com
+  slack: nonio:Qw2vMbsIGDOVdWScx3hazBzAs
