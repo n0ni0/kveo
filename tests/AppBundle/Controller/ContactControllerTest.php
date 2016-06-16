@@ -3,25 +3,15 @@
 namespace Tests\AppBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Tests\AppBundle\Fixtures\AbstractTestCase;
 
-class ContactControllerTest extends WebTestCase
+class ContactControllerTest extends AbstractTestCase
 {
-    private $client;
-
-    protected function setUp()
-    {
-        $this->client = static::createClient(array(), array(
-            'PHP_AUTH_USER' => 'username',
-            'PHP_AUTH_PW'   => 'username',
-        ));
-    }
-
     public function testContactForm()
     {
         $crawler = $this->client->request('POST', '/contact/');
 
-        $this->assertEquals(1, $crawler->filter('h3:contains("Formulario de contacto")')->count());
+        $this->assertEquals(1, $crawler->filter('html:contains("Formulario de contacto")')->count());
 
         $form = $crawler->selectButton('Enviar')->form();
         $form['app_contact[message]'] = "This is a example of contact message";

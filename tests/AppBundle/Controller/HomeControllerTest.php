@@ -2,25 +2,21 @@
 
 namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Tests\AppBundle\Fixtures\AbstractTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class HomeControllerTest extends AbstractTestCase
 {
-    private $client;
-
-    protected function setUp()
-    {
-        $this->client = static::createClient(array(), array(
-            'PHP_AUTH_USER' => 'username',
-            'PHP_AUTH_PW'   => 'username',
-        ));
-    }
-
     public function testThatLoadHomePage()
     {
         $crawler = $this->client->request('GET', '/');
 
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $this->assertEquals(1, $crawler->filter('div#carousel')->count());
+    }
+
+    public function testThatLoadUserDropDownMenu()
+    {
+        $crawler = $this->client->request('GET', '/');
+        $this->assertEquals(1, $crawler->filter('div[class="dropdown"]')->count());
     }
 }
