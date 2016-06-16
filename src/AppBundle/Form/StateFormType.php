@@ -27,4 +27,9 @@ class StateFormType extends AbstractType
             'data_class' => 'AppBundle\Entity\State'
         ));
     }
+    
+    public function getBlockPrefix()
+    {
+        return 'app_state';
+    }
 }
