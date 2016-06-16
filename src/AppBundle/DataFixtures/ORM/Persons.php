@@ -23,7 +23,7 @@ class Persons extends AbstractFixture implements OrderedFixtureInterface, Contai
 
     public function  load(ObjectManager $manager)
     {
-        for($i=1; $i <100; $i++) {
+        for($i=1; $i <20; $i++) {
             $person = new Person();
             $person->setName('Person'.$i);
             $person->setSlug($this->container->get('slugger')->slugify($person->getName()));
