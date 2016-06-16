@@ -19,3 +19,11 @@ security:
   firewalls:
     main:
       http_basic: ~
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_sqlite
+                path:     build/test.db
