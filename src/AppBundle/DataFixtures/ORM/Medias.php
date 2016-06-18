@@ -35,7 +35,6 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
             $media->setMediaType($mediaType);
             $media->setGender($gender);
             $media->setTitle('Title '.$i);
-            $media->setSlug($this->container->get('slugger')->slugify($media->getTitle()));
             $media->setYear(rand(1980, 2016));
             $media->setPlot(
                 $i.'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
@@ -60,7 +59,6 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
         $testMedia->setMediaType($mediaTypes[2]); //serie
         $testMedia->setGender($genders[6]); //comedia
         $testMedia->setTitle('Title1');
-        $testMedia->setSlug($this->container->get('slugger')->slugify($testMedia->getTitle()));
         $testMedia->setYear(2011);
         $testMedia->setPlot(
             $i.'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.

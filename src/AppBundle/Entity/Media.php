@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 
+use AppBundle\Utils\Slugger;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping as ORM;
@@ -132,6 +133,7 @@ class Media
     public function setTitle($title)
     {
         $this->title = $title;
+        $this->slug = Slugger::slugify($title);
 
         return $this;
     }
