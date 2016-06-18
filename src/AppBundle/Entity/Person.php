@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Utils\Slugger;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -81,6 +82,7 @@ class Person
     public function setName($name)
     {
         $this->name = $name;
+        $this->slug = Slugger::slugify($name);
 
         return $this;
     }
