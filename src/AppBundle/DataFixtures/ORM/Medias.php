@@ -26,7 +26,7 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
         $mediaTypes = $manager->getRepository('AppBundle:MediaType')->findAll();
         $genders    = $manager->getRepository('AppBundle:Gender')->findAll();
 
-        for($i=1; $i <100; $i++) {
+        for($i=2; $i <100; $i++) {
 
             $mediaType  = $mediaTypes[array_rand($mediaTypes)];
             $gender     = $genders[array_rand($genders)];
@@ -54,6 +54,24 @@ class Medias extends AbstractFixture implements OrderedFixtureInterface, Contain
             $manager->persist($media);
 
         }
+
+
+        $testMedia = new Media();
+        $testMedia->setMediaType($mediaTypes[2]); //serie
+        $testMedia->setGender($genders[6]); //comedia
+        $testMedia->setTitle('Title1');
+        $testMedia->setSlug($this->container->get('slugger')->slugify($testMedia->getTitle()));
+        $testMedia->setYear(2011);
+        $testMedia->setPlot(
+            $i.'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.'
+        );
+        $testMedia->setImage('kveo-walkingDead.jpg');
+        $testMedia->setTrailer('https://www.youtube.com/watch?v=R1v0uFms68U');
+        $this->addReference('media', $testMedia);
+        $manager->persist($testMedia);
+
         $manager->flush();
     }
 

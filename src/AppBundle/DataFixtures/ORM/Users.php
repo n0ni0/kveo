@@ -30,6 +30,7 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $admin->setPlainPassword('admin');
         $admin->setEnabled('true');
         $admin->setRoles(array('ROLE_ADMIN'));
+        $this->addReference('admin', $admin);
 
         $userManager->updateUser($admin, true);
 
@@ -39,6 +40,7 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $user->setPlainPassword('username');
         $user->setEnabled('true');
         $user->setRoles(array('ROLE_ADMIN'));
+        $this->addReference('username', $user);
 
         $userManager->updateUser($user, true);
     }
