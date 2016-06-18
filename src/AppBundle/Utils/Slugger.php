@@ -10,7 +10,7 @@ class Slugger
      *
      * @return string
      */
-    public function slugify($str)
+    public static function slugify($str)
     {
         // http://cubiq.org/the-perfect-php-clean-url-generator
         $clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
