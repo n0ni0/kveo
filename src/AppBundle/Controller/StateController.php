@@ -42,10 +42,13 @@ class StateController extends  Controller
     }
 
     /**
-     * @Route("/media/{media}/state/{state}/edit", name="edit_state")
+     * @Route("/media/{media}/state/edit", name="edit_state")
      */
-    public function EditStateAction(Request $request, Media $media, State $state)
+    public function EditStateAction(Request $request, Media $media)
     {
+        $user  = $this->getUser()->getId();
+        $state = $this->getDoctrine()->getRepository('AppBundle:State')->findStateByMedia($media, $user);
+        
         $form = $this->createForm(StateFormType::class, $state);
         $form->handleRequest($request);
 
@@ -62,7 +65,6 @@ class StateController extends  Controller
 
         return $this->render('state/editState.html.twig', array(
             'media'       => $media,
-            'state'       => $state,
             'form'        => $form->createView(),
         ));
     }
