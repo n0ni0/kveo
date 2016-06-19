@@ -17,8 +17,14 @@ class Comments extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        $medias = $manager->getRepository('AppBundle:Media')->findAll();
+        $medias = $manager->getRepository('AppBundle:Media')->findAllMediasExceptTest();
         $users = $manager->getRepository('AppBundle:User')->findAll();
+
+        $testComment = new Comment();
+        $testComment->setMedia($this->getReference('media'));
+        $testComment->setUser($this->getReference('username'));
+        $testComment->setComment('Test comment');
+        $manager->persist($testComment);
 
         for($i=2; $i < 50; $i++) {
             $user = $users[array_rand($users)];
@@ -30,12 +36,6 @@ class Comments extends AbstractFixture implements OrderedFixtureInterface
             $comment->setComment($this->getComments());
             $manager->persist($comment);
         }
-
-        $testComment = new Comment();
-        $testComment->setMedia($this->getReference('media'));
-        $testComment->setUser($this->getReference('username'));
-        $testComment->setComment('Test comment');
-        $manager->persist($testComment);
 
         $manager->flush();
     }
