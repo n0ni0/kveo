@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Utils\Slugger;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -197,7 +198,7 @@ class Person
      */
     public function __construct()
     {
-        $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medias = new ArrayCollection();
     }
 
     /**
@@ -237,4 +238,15 @@ class Person
     public function __toString(){
         return $this->getName();
     }
+
+    /**
+     * @param $medias
+     */
+    public function setMedias($medias)
+    {
+        $this->medias->clear();
+        $this->medias = new ArrayCollection($medias);
+    }
+
+
 }

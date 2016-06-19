@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 
 use AppBundle\Utils\Slugger;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping as ORM;
@@ -110,7 +111,7 @@ class Media
     private $persons;
 
     public function __construct() {
-        $this->persons = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->persons = new ArrayCollection();
     }
 
     /**
@@ -383,9 +384,7 @@ class Media
      */
     public function addPerson(\AppBundle\Entity\Person $person)
     {
-        $this->persons[] = $person;
-
-        return $this;
+        $this->persons->add($person);
     }
 
     /**
@@ -395,6 +394,7 @@ class Media
      */
     public function removePerson(\AppBundle\Entity\Person $person)
     {
+        $person->removeMedia($this);
         $this->persons->removeElement($person);
     }
 
@@ -406,6 +406,20 @@ class Media
     public function getPersons()
     {
         return $this->persons;
+    }
+
+    /**
+     *
+     * @param Person[] $persons
+     */
+    public function setPersons($persons)
+    {
+        foreach ($this->getPersons() as $person) {
+            $this->removePerson($person);
+        }
+        foreach ($persons as $person) {
+            $this->addPerson($person);
+        }
     }
 
     public function setImageFile(File $image = null)
