@@ -21,4 +21,16 @@ class MediaRepository extends \Doctrine\ORM\EntityRepository
         }
         return $queryBuilder;
     }
+
+    public function findAllMediasExceptTest()
+    {
+        $em  = $this->getEntityManager();
+        $dql = 'SELECT m
+                  FROM AppBundle:Media m
+                 WHERE m.id > 1';
+
+        $query = $em->createQuery($dql);
+        $query->execute();
+        return $query->getResult();
+    }
 }

@@ -41,6 +41,7 @@ class StateControllerTest extends AbstractTestCase
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
         $link    = $crawler->selectLink('Borrar estado')->link();
+        $this->client->followRedirects(true);
         $crawler = $this->client->click($link);
 
         $this->assertEquals(1, $crawler->filter('html:contains("Reparto")')->count());

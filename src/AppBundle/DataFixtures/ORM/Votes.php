@@ -17,8 +17,14 @@ class Votes extends AbstractFixture implements OrderedFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        $medias      = $manager->getRepository('AppBundle:Media')->findAll();
+        $medias      = $manager->getRepository('AppBundle:Media')->findAllMediasExceptTest();
         $users       = $manager->getRepository('AppBundle:User')->findAll();
+
+        $testState = new Vote();
+        $testState->setMedia($this->getReference('media'));
+        $testState->setUser($this->getReference('username'));
+        $testState->setRating(4);
+        $manager->persist($testState);
 
         for($i=2; $i < 30; $i++) {
 
@@ -32,12 +38,6 @@ class Votes extends AbstractFixture implements OrderedFixtureInterface
             $state->setRating($vote);
             $manager->persist($state);
         }
-
-        $testState = new Vote();
-        $testState->setMedia($this->getReference('media'));
-        $testState->setUser($this->getReference('username'));
-        $testState->setRating(4);
-        $manager->persist($testState);
 
         $manager->flush();
     }
