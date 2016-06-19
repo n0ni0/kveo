@@ -356,6 +356,14 @@
                 <source>easy.image</source>
                   <target>Imagen</target>
                </trans-unit>
+              <trans-unit id="easy.password">
+                <source>easy.password</source>
+                  <target>Contraseña</target>
+               </trans-unit>
+              <trans-unit id="easy.enabled">
+                <source>easy.enabled</source>
+                  <target>Habilitado</target>
+               </trans-unit>
 
               <trans-unit id="footer.created_by">
                 <source>footer.created_by</source>
