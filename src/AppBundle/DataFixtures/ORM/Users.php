@@ -29,7 +29,8 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $admin->setEmail('admin@kveo.local');
         $admin->setPlainPassword('admin');
         $admin->setEnabled('true');
-        $admin->setRoles(array('ROLE_ADMIN'));
+        $admin->setRoles(array('ROLE_SUPER_ADMIN'));
+        $this->addReference('admin', $admin);
 
         $userManager->updateUser($admin, true);
 
@@ -38,7 +39,8 @@ class Users extends AbstractFixture implements OrderedFixtureInterface, Containe
         $user->setEmail('username@kveo.local');
         $user->setPlainPassword('username');
         $user->setEnabled('true');
-        $user->setRoles(array('ROLE_ADMIN'));
+        $user->setRoles(array('ROLE_USER'));
+        $this->addReference('username', $user);
 
         $userManager->updateUser($user, true);
     }

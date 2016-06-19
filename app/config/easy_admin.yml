@@ -32,8 +32,6 @@ easy_admin:
                     - { property: 'mediaType', label: 'easy.type'}
                     - { property: 'gender', label: 'easy.gender'}
                     - { property: 'image', type: 'image',  label: 'easy.image', base_path: %app.path.media_images% }
-                    - { property: 'trailer', label: 'easy.trailer'}
-                    - { property: 'season', label: 'easy.season'}
             form:
                 fields:
                     - { property: 'title', label: 'easy.title'}
@@ -58,6 +56,13 @@ easy_admin:
                      - { property: 'locked', label: 'easy.locked'}
                      - { property: 'expired', label: 'easy.expired'}
                      - { property: 'roles', label: 'easy.roles'}
+             form:
+                fields:
+                    - { property: 'username', label: 'easy.user'}
+                    - { property: 'email', label: 'easy.email'}
+                    - { property: 'password', label: 'easy.password'}
+                    - { property: 'roles', label: 'easy.roles'}
+                    - { property: 'enabled', label: 'easy.enabled'}
         Gender:
              class: AppBundle\Entity\Gender
              label: 'easy.gender.label'
@@ -92,6 +97,12 @@ easy_admin:
                      - { property: 'name', label: 'easy.name'}
                      - { property: 'age', label: 'easy.age'}
                      - { property: 'birthplace', label: 'easy.birthplace'}
+             form:
+                fields:
+                     - { property: 'name', label: 'easy.name'}
+                     - { property: 'age', label: 'easy.age'}
+                     - { property: 'birthplace', label: 'easy.birthplace'}
+                     - { property: 'medias', label: 'easy.person.label'}
         State:
              class: AppBundle\Entity\State
              label: 'easy.state.label'

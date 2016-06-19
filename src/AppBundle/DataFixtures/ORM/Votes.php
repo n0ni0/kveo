@@ -20,7 +20,7 @@ class Votes extends AbstractFixture implements OrderedFixtureInterface
         $medias      = $manager->getRepository('AppBundle:Media')->findAll();
         $users       = $manager->getRepository('AppBundle:User')->findAll();
 
-        for($i=1; $i < 30; $i++) {
+        for($i=2; $i < 30; $i++) {
 
             $media       = $medias[array_rand($medias)];
             $vote        = rand(0, 5);
@@ -32,6 +32,12 @@ class Votes extends AbstractFixture implements OrderedFixtureInterface
             $state->setRating($vote);
             $manager->persist($state);
         }
+
+        $testState = new Vote();
+        $testState->setMedia($this->getReference('media'));
+        $testState->setUser($this->getReference('username'));
+        $testState->setRating(4);
+        $manager->persist($testState);
 
         $manager->flush();
     }

@@ -34,6 +34,12 @@ class States extends AbstractFixture implements OrderedFixtureInterface
             $manager->persist($state);
         }
 
+        $testState = new State();
+        $testState->setMedia($this->getReference('media'));
+        $testState->setUser($this->getReference('username'));
+        $testState->setMediaState($mediaStates[1]);
+        $manager->persist($testState);
+
         $manager->flush();
     }
 }
