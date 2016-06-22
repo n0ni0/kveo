@@ -87,11 +87,11 @@
                         {{ comments.user }}
                         {{ comments.publishedAt|date('d-m-Y H:i') }}
                         {% if is_granted('EDIT', comments) %}
-                            <a href="{{ path('comment_edit', { 'id':comments.id, 'media': selected.id }) }}"
+                            <a id="edit-comment" href="{{ path('comment_edit', { 'id':comments.id, 'media': selected.id }) }}"
                                class="btn btn-xs btn-default">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <a href="{{ path('comment_delete', { 'id':comments.id, 'media': selected.id }) }}"
+                            <a id="delete-comment" href="{{ path('comment_delete', { 'id':comments.id, 'media': selected.id }) }}"
                                class="btn btn-xs btn-default">
                                 <i class="fa fa-trash-o"></i>
                             </a>
