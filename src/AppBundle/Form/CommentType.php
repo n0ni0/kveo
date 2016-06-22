@@ -27,4 +27,9 @@ class CommentType extends AbstractType
             'data-class' => 'AppBundle\Entity\Comment',
         ));
     }
+
+    public function getBlockPrefix()
+    {
+        return 'app_comment';
+    }
 }
