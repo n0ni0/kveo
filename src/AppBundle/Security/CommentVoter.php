@@ -42,7 +42,7 @@ class CommentVoter extends Voter
             return true;
         }
 
-        if ($this->decisionManager->decide($token, array('ROLE_ADMIN'))) {
+        if ($this->decisionManager->decide($token, array('ROLE_SUPER_ADMIN', 'ROLE_ADMIN'))) {
             return true;
         }
 
