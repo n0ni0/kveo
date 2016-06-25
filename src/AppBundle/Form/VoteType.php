@@ -23,4 +23,9 @@ class VoteType extends AbstractType
             'data-class' => 'AppBundle\Entity\Vote',
         ));
     }
+
+    public function getBlockPrefix()
+    {
+        return 'app_vote';
+    }
 }
