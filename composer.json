@@ -34,7 +34,10 @@
         "ornicar/gravatar-bundle" : "~1.0",
         "javiereguiluz/easyadmin-bundle": "^1.12",
         "blackknight467/star-rating-bundle": "2.*",
-        "vich/uploader-bundle": "^1.0"
+        "vich/uploader-bundle": "^1.0",
+        "lexik/jwt-authentication-bundle": "dev-master",
+        "jms/serializer-bundle": "^1.1"
+
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
