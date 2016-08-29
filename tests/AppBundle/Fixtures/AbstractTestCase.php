@@ -44,4 +44,17 @@ abstract class AbstractTestCase extends WebTestCase
         $buildDir = 'build/';
         copy($buildDir.'/original_test.db', $buildDir.'/test.db');
     }
+
+    protected function assertJsonResponse($response, $statusCode = 200)
+    {
+        $this->assertEquals(
+            $statusCode,
+            $response->getStatusCode(),
+            $response->getContent()
+        );
+        $this->assertTrue(
+            $response->headers->contains('Content-Type', 'application/json'),
+            $response->headers
+        );
+    }
 }
