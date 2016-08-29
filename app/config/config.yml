@@ -10,6 +10,7 @@ imports:
     - { resource: vich_uploader.yml }
     - { resource: lexit_jwt.yml }
     - { resource: fos_rest.yml }
+    - { resource: jms_serializer.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
