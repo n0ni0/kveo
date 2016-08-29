@@ -3,11 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Groups;
 
 /**
  * MediaType
  *
  * @ORM\Table(name="media_type")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MediaTypeRepository")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MediaTypeRepository")
  */
 class MediaType
@@ -18,6 +22,8 @@ class MediaType
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"list", "details"})
+     *
      */
     private $id;
 
@@ -25,13 +31,13 @@ class MediaType
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     * @Groups({"list", "details"})
      */
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
 

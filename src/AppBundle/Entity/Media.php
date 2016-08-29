@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -17,6 +18,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Table(name="media")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MediaRepository")
  * @Vich\Uploadable
+ * @Serializer\ExclusionPolicy("all")
  */
 class Media
 {
@@ -28,16 +30,22 @@ class Media
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Expose()
+     * @Serializer\Groups({"list", "details"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MediaType")
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $mediaType;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Gender")
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $gender;
 
@@ -45,6 +53,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $title;
 
@@ -52,6 +62,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     * @Serializer\Groups({"details"})
+     * @Serializer\Expose()
      */
     private $slug;
 
@@ -59,6 +71,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="year", type="integer")
+     * @Serializer\Groups({"details"})
+     * @Serializer\Expose()
      */
     private $year;
 
@@ -66,6 +80,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="season", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"details"})
+     * @Serializer\Expose()
      */
     private $season;
 
@@ -73,6 +89,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="plot", type="text")
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $plot;
 
@@ -80,6 +98,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=255)
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $image;
 
@@ -93,6 +113,8 @@ class Media
      * @var string
      *
      * @ORM\Column(name="trailer", type="string", length=255, nullable=true)
+     * @Serializer\Groups({"list", "details"})
+     * @Serializer\Expose()
      */
     private $trailer;
 
@@ -107,6 +129,8 @@ class Media
      *     joinColumns={@JoinColumn(name="media_id", referencedColumnName="id")},
      *     inverseJoinColumns={@JoinColumn(name="person_id", referencedColumnName="id")}
      *     )
+     * @Serializer\Groups({"details"})
+     * @Serializer\Expose()
      */
     private $persons;
 
