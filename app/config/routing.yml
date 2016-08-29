@@ -36,3 +36,7 @@ api:
     type: rest
     resource: "routing_api.yml"
     prefix: /api
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
