@@ -21,3 +21,7 @@ services:
         arguments:
             - "@mailer"
             - "@templating"
+
+    app.jwt_token_authenticator:
+        class:     AppBundle\Security\JwtTokenAuthenticator
+        arguments: ['@doctrine.orm.entity_manager', '@lexik_jwt_authentication.encoder']
