@@ -17,6 +17,7 @@ security:
                 authenticators:
                     - app.jwt_token_authenticator
             anonymous: true
+            stateless: true
 
         main:
             pattern: ^/

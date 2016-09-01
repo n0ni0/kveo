@@ -57,4 +57,18 @@ abstract class AbstractTestCase extends WebTestCase
             $response->headers
         );
     }
+
+    protected function getService($id)
+    {
+        return self::$kernel->getContainer()
+            ->get($id);
+    }
+
+    protected function getAuthorizedHeaders($username, $headers = array())
+    {
+        $token = $this->getService('lexik_jwt_authentication.encoder')
+            ->encode(['username' => $username]);
+        $headers['Authorization'] = 'Bearer '.$token;
+        return $headers;
+    }
 }

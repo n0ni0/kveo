@@ -2,22 +2,35 @@
 
 namespace Tests\AppBundle\Controller\Api;
 
-
 use Tests\AppBundle\Fixtures\AbstractTestCase;
 
-class ContactControllerTest extends AbstractTestCase
+class WelcomeControllerTest extends AbstractTestCase
 {
-    public function tesGetBasicMediaInfo()
+    public function testGetBasicMediaInfo()
     {
-        $crawler = $this->client->request('GET', 'api/media/1/info/basic');
+        $client   = new \GuzzleHttp\Client();
+        $response = $client->request(
+            'GET',
+            'http://localhost:8000/api/media/1/info/basic',
+            [
+                'headers' => $this->getAuthorizedHeaders('admin')
+            ]
+        );
 
-        $this->assertJsonResponse($this->client->getResponse(), 200);
+        $this->assertEquals(200, $response->getStatusCode());
     }
 
-    public function testFullMediaInfo()
+    public function testGetFullMediaInfo()
     {
-        $crawler = $this->client->request('GET', 'api/media/1/info/full');
+        $client   = new \GuzzleHttp\Client();
+        $response = $client->request(
+            'GET',
+            'http://localhost:8000/api/media/1/info/full',
+            [
+                'headers' => $this->getAuthorizedHeaders('admin')
+            ]
+        );
 
-        $this->assertJsonResponse($this->client->getResponse(), 200);
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }
