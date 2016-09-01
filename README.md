@@ -2,8 +2,19 @@
 ====
 
   
-[![Build Status](https://travis-ci.org/n0ni0/kveo.svg?branch=master)](https://travis-ci.org/n0ni0/kveo) 
-[![Coverage Status](https://coveralls.io/repos/github/n0ni0/kveo/badge.svg?branch=master)](https://coveralls.io/github/n0ni0/kveo?branch=master)
+[![Build Status](https://travis-ci.org/n0ni0/kveo.svg?branch=api)](https://travis-ci.org/n0ni0/kveo) 
+[![Coverage Status](https://coveralls.io/repos/github/n0ni0/kveo/badge.svg?branch=api)](https://coveralls.io/github/n0ni0/api?branch=api)
+
+
+Api branch in progress
+-----------------------
+This branch use this bundles:  
+[FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle) -- Provides various tools to rapidly develop RESTful API's  
+[LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle) -- Provides JWT authentication  
+[LJMSSerializerBundle](https://github.com/lexik/LexikJWTAuthenticationBundle) -- Serialize, and deserialize data of any complexity  
+[NelmioApiDocBundle](https://github.com/lexik/LexikJWTAuthenticationBundle) -- Generates api documentation  
+Guard, new symfony security component that simplifies authentication process, providing a consistent API for your custom authenticators.  
+  
 
 This applications is created with the PHP Framework Symfony 3.  
 kveo simulates a social network where users can rate and comments movies, series, documentaries, tv programms, etc..
