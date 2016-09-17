@@ -15,7 +15,7 @@ class StateController extends  Controller
     /**
      * @Route("/media/{media}/state/new/", name="new_state")
      */
-    public function NewStateAction(Request $request, Media $media)
+    public function newStateAction(Request $request, Media $media)
     {
         $state = new State();
         $form = $this->createForm(StateFormType::class, $state);
@@ -44,7 +44,7 @@ class StateController extends  Controller
     /**
      * @Route("/media/{media}/state/edit", name="edit_state")
      */
-    public function EditStateAction(Request $request, Media $media)
+    public function editStateAction(Request $request, Media $media)
     {
         $user  = $this->getUser()->getId();
         $state = $this->getDoctrine()->getRepository('AppBundle:State')->findStateByMedia($media, $user);
