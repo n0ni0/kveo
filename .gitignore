@@ -15,7 +15,6 @@
 /vendor/
 /web/bundles/
 /web/media/
-.idea
 /Capfile
 /ansible
 /config
